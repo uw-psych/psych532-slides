@@ -2,4 +2,5 @@
 title: "Psych532-slides"
 ---
 
--   Introduction [\[slides\]](slides/01-introduction.html)
+- Introduction [\[slides\]](slides/01-introduction.html)
+- Reproducibility [\[slides\]](slides/02-reproducibility.html)
