@@ -1,9 +1,9 @@
 ---
 title: "Introduction"
 author: "Ariel Rokem"
-subtitle: "Foo"
 format:
   revealjs:
+    incremental: true
     theme: theme.scss
     transition: fade
     background-transition: fade
@@ -27,12 +27,11 @@ execute:
 **Column header 1**
 
 Something about something
-
 :::
 
 ::: {.column width="50%" style="text-align: center;"}
 
-**Column header 1:**
+**Column header 2:**
 
 Something about something else
 :::

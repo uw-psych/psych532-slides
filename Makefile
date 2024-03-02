@@ -1,3 +1,6 @@
+clean:
+	rm -rf _site
+
 render:
 	quarto render
 
