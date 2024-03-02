@@ -1,0 +1,5 @@
+---
+title: "Psych532-slides"
+---
+
+-   Introduction [\[slides\]](slides/01-introduction.html)

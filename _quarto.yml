@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Slides for Psych532"
+  description: "."
+  site-url: "https://uw-psych.github.io/psych532-slides"
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2024, Ariel Rokem"
+
+  sidebar:
+    style: "docked"
+    tools:
+      - icon: github
+        href: https://github.com/uw-psych/psych532-slides
+    contents:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    mainfont: "Atkinson Hyperlegible"
+
+editor: visual
+
+execute:
+  freeze: auto

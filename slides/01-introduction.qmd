@@ -1,0 +1,43 @@
+---
+title: "Introduction"
+author: "Ariel Rokem"
+subtitle: "Foo"
+format:
+  revealjs:
+    theme: theme.scss
+    transition: fade
+    background-transition: fade
+    highlight-style: a11y
+code-link: true
+execute:
+  echo: true
+  freeze: auto
+---
+
+# Introduction
+
+- Bullet the first
+- Bullet the second
+
+# With images
+
+::: columns
+::: {.column width="50%" style="text-align: center;"}
+
+**Column header 1**
+
+Something about something
+
+:::
+
+::: {.column width="50%" style="text-align: center;"}
+
+**Column header 1:**
+
+Something about something else
+:::
+:::
+
+# Questions?
+
+Anyone? Bueller?
