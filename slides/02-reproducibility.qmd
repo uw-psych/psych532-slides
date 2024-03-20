@@ -1,7 +1,5 @@
 ---
 title: "Reproducibility"
-author: "Ariel Rokem"
-subtitle: "Foo"
 format:
   revealjs:
     theme: theme.scss
@@ -14,30 +12,87 @@ execute:
   freeze: auto
 ---
 
-# Introduction
+# Why is reproducibility important?
 
-- Bullet the first
-- Bullet the second
+# What is reproducibility?
 
-# With images
+::: fragment
+![](images/repro_terms.png){fig-align="right"}
+:::
 
-::: columns
-::: {.column width="50%" style="text-align: center;"}
+# "Most research findings are false"
 
-**Column header 1**
+Ioannidis 2005, PLoS Medicine
 
-Something about something
+- The main reason is the reliance on p-values for assessing the truth of scientific hypotheses.
+- PPV: "positive predictive value", the post-study probability that a research finding is true.
+- I.e., the chance it would replicate/generalize.
+
+::: tiny
+
+https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null-hypothesis-significance-testing/
 
 :::
 
-::: {.column width="50%" style="text-align: center;"}
+# "Most research findings are false"
 
-**Column header 1:**
+- PPV depends on statistical power (effect size, sample size), but not only.
+- The ratio of "true relationships" to "no relationships" tested within a research field.
+- Bias: design, analysis and presentation factors that produce false research findings.
+- Testing by several independent teams.
 
-Something about something else
-:::
-:::
+# "Most research findings are false"
 
-# Questions?
+- The greater the number and the lesser the selection of tested relationships in a scientific field, the less likely the research findings are to be true.
+- The greater the flexibility in designs, definitions, outcomes, and analytical modes in a scientific field, the less likely the research findings are to be true.
+- The greater the financial and other interests and prejudices in a scientific field, the less likely the research findings are to be true.
+- The hotter a scientific field (with more scientific teams involved), the less likely the research findings are to be true.
 
-Anyone? Bueller?
+# "Most research findings are false"
+
+![](images/ppv.png){fig-align="right"}
+
+# It gets worse...
+
+"False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant"
+
+Simmons, Nelson, Simonsohn, 2011
+
+# Undisclosed flexibility
+
+- HARKing
+- p-hacking
+
+# Undisclosed flexibility
+
+![](images/phacking.png){fig-align="right"}
+
+
+# The Open Science Collaboration
+
+- Many concerns, but little hard *evidence*.
+- Goal: estimate PPV in psychology research.
+- Reproduced 100 studies from prominent psych journals (Psych Sci, JPSP, JEP:LMC).
+- Studies/experiments selected using a uniform approach.
+- Replications conducted in consultation with original authors.
+
+
+# Results
+
+- Using null hypothesis rejection as criterion: 35 / 97 replications.
+- Using effect size overlap 30 / 73 replications.
+- Overall replication more prevalent for cognitive psych than social psych.
+
+# Results
+
+![](images/osc.png){fig-align="right"}
+
+---
+
+# What about *reproducibility*?
+
+![](images/repro_terms.png){fig-align="right"}
+
+# What about *generalization*?
+
+![](images/repro_terms.png){fig-align="right"}

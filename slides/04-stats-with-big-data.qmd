@@ -1,0 +1,30 @@
+---
+title: "Doing statistics with big data"
+format:
+  revealjs:
+    theme: theme.scss
+    transition: fade
+    background-transition: fade
+    highlight-style: a11y
+code-link: true
+execute:
+  echo: true
+  freeze: auto
+---
+
+
+# Challenges of doing statistics with big data
+
+Data can be "big" in two different ways:
+
+- Many rows in the table (large $n$)
+- Many columns in the table (large $p$)
+
+Both of these present statistical challenges
+
+# Large $p$: the curse of dimensionality
+
+
+
+
+
