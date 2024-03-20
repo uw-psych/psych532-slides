@@ -8,9 +8,8 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.551">
 
-  <meta name="author" content="Ariel Rokem">
   <title>Slides for Psych532 - Reproducibility</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -327,43 +326,122 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Reproducibility</h1>
-  <p class="subtitle">Foo</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Ariel Rokem 
-</div>
-</div>
 </div>
 
 </section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
+<section id="why-is-reproducibility-important" class="title-slide slide level1 center">
+<h1>Why is reproducibility important?</h1>
+
+</section>
+
+<section id="what-is-reproducibility" class="title-slide slide level1 center">
+<h1>What is reproducibility?</h1>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="images/repro_terms.png" class="quarto-figure quarto-figure-right"></p>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="most-research-findings-are-false" class="title-slide slide level1 center">
+<h1>“Most research findings are false”</h1>
+<p>Ioannidis 2005, PLoS Medicine</p>
 <ul>
-<li>Bullet the first</li>
-<li>Bullet the second</li>
+<li>The main reason is the reliance on p-values for assessing the truth of scientific hypotheses.</li>
+<li>PPV: “positive predictive value”, the post-study probability that a research finding is true.</li>
+<li>I.e., the chance it would replicate/generalize.</li>
+</ul>
+<div class="tiny">
+<p>https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null-hypothesis-significance-testing/</p>
+</div>
+</section>
+
+<section id="most-research-findings-are-false-1" class="title-slide slide level1 center">
+<h1>“Most research findings are false”</h1>
+<ul>
+<li>PPV depends on statistical power (effect size, sample size), but not only.</li>
+<li>The ratio of “true relationships” to “no relationships” tested within a research field.</li>
+<li>Bias: design, analysis and presentation factors that produce false research findings.</li>
+<li>Testing by several independent teams.</li>
 </ul>
 </section>
 
-<section id="with-images" class="title-slide slide level1 center">
-<h1>With images</h1>
-<div class="columns">
-<div class="column" style="text-align: center;">
-<p><strong>Column header 1</strong></p>
-<p>Something about something</p>
-</div><div class="column" style="text-align: center;">
-<p><strong>Column header 1:</strong></p>
-<p>Something about something else</p>
-</div>
-</div>
+<section id="most-research-findings-are-false-2" class="title-slide slide level1 center">
+<h1>“Most research findings are false”</h1>
+<ul>
+<li>The greater the number and the lesser the selection of tested relationships in a scientific field, the less likely the research findings are to be true.</li>
+<li>The greater the flexibility in designs, definitions, outcomes, and analytical modes in a scientific field, the less likely the research findings are to be true.</li>
+<li>The greater the financial and other interests and prejudices in a scientific field, the less likely the research findings are to be true.</li>
+<li>The hotter a scientific field (with more scientific teams involved), the less likely the research findings are to be true.</li>
+</ul>
 </section>
 
-<section id="questions" class="title-slide slide level1 center">
-<h1>Questions?</h1>
-<p>Anyone? Bueller?</p>
+<section id="most-research-findings-are-false-3" class="title-slide slide level1 center">
+<h1>“Most research findings are false”</h1>
 
-<div class="quarto-auto-generated-content">
+<img data-src="images/ppv.png" class="quarto-figure quarto-figure-right r-stretch"></section>
+
+<section id="it-gets-worse" class="title-slide slide level1 center">
+<h1>It gets worse…</h1>
+<p>“False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant”</p>
+<p>Simmons, Nelson, Simonsohn, 2011</p>
+</section>
+
+<section id="undisclosed-flexibility" class="title-slide slide level1 center">
+<h1>Undisclosed flexibility</h1>
+<ul>
+<li>HARKing</li>
+<li>p-hacking</li>
+</ul>
+</section>
+
+<section id="undisclosed-flexibility-1" class="title-slide slide level1 center">
+<h1>Undisclosed flexibility</h1>
+
+<img data-src="images/phacking.png" class="quarto-figure quarto-figure-right r-stretch"></section>
+
+<section id="the-open-science-collaboration" class="title-slide slide level1 center">
+<h1>The Open Science Collaboration</h1>
+<ul>
+<li>Many concerns, but little hard <em>evidence</em>.</li>
+<li>Goal: estimate PPV in psychology research.</li>
+<li>Reproduced 100 studies from prominent psych journals (Psych Sci, JPSP, JEP:LMC).</li>
+<li>Studies/experiments selected using a uniform approach.</li>
+<li>Replications conducted in consultation with original authors.</li>
+</ul>
+</section>
+
+<section id="results" class="title-slide slide level1 center">
+<h1>Results</h1>
+<ul>
+<li>Using null hypothesis rejection as criterion: 35 / 97 replications.</li>
+<li>Using effect size overlap 30 / 73 replications.</li>
+<li>Overall replication more prevalent for cognitive psych than social psych.</li>
+</ul>
+</section>
+
+<section>
+<section id="results-1" class="title-slide slide level1 center">
+<h1>Results</h1>
+
+<img data-src="images/osc.png" class="quarto-figure quarto-figure-right r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section id="what-about-reproducibility" class="title-slide slide level1 center">
+<h1>What about <em>reproducibility</em>?</h1>
+
+<img data-src="images/repro_terms.png" class="quarto-figure quarto-figure-right r-stretch"></section>
+
+<section id="what-about-generalization" class="title-slide slide level1 center">
+<h1>What about <em>generalization</em>?</h1>
+
+
+<img data-src="images/repro_terms.png" class="quarto-figure quarto-figure-right r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
@@ -655,6 +733,24 @@ Ariel Rokem
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/uw-psych\.github\.io\/psych532-slides");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -691,7 +787,11 @@ Ariel Rokem
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

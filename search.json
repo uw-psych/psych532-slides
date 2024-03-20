@@ -10,6 +10,41 @@
     ]
   },
   {
+    "objectID": "slides/01-introduction.html#today",
+    "href": "slides/01-introduction.html#today",
+    "title": "Welcome to Psych 532!",
+    "section": "Today",
+    "text": "Today\n\nSome course mechanics\nThe intellectual foundations of data science"
+  },
+  {
+    "objectID": "slides/01-introduction.html#about-me",
+    "href": "slides/01-introduction.html#about-me",
+    "title": "Welcome to Psych 532!",
+    "section": "About me",
+    "text": "About me\n\nPlease call me Ariel and use he/him/his for my pronouns.\nI a Research Associate Professor in the Department\nMy group is the Neuroinformatics R&D Group\nMy email address is arokem@uw.edu\nMore about course communications below.\nCourse mechanics\n\nCourse website:\nhttps://uw-psych.github.io/2024-psych532/"
+  },
+  {
+    "objectID": "slides/01-introduction.html#the-course-meets-twice-a-week-and-will-include-three-types-of-sessions",
+    "href": "slides/01-introduction.html#the-course-meets-twice-a-week-and-will-include-three-types-of-sessions",
+    "title": "Welcome to Psych 532!",
+    "section": "The course meets twice a week and will include three types of sessions",
+    "text": "The course meets twice a week and will include three types of sessions\n\nLectures\nLab\nStudio"
+  },
+  {
+    "objectID": "slides/01-introduction.html#david-donoho",
+    "href": "slides/01-introduction.html#david-donoho",
+    "title": "Welcome to Psych 532!",
+    "section": "David Donoho",
+    "text": "David Donoho\n\n\nStatistician who has made fundamental contributions, including huge impact in application of “compressed sensing” in the geosciences.\nTogether with other collaborators (Claerbout, Buckheit) also had impact in defining computational reproducibility. We’ll come back to that in a few weeks.\nThe article starts with a critique of the ~2015 interest in “data science” within universities, and how it was constituted.\nNext, it walks through several milestones in the history of data science in the last 50 years."
+  },
+  {
+    "objectID": "slides/01-introduction.html#greater-data-science",
+    "href": "slides/01-introduction.html#greater-data-science",
+    "title": "Welcome to Psych 532!",
+    "section": "“Greater Data Science”",
+    "text": "“Greater Data Science”\n\n\n\nData Gathering, Preparation, and Exploration.\nData Representation and Transformation.\nComputing with Data.\nData Modeling.\nData Visualization and Presentation.\nScience about Data Science.\n\n\n\nSee also Cleveland (2001) “Data Science: An Action Plan for Expanding the Technical Areas of the field of Statistics”."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
