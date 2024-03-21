@@ -9,7 +9,7 @@ website:
 
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2024, Ariel Rokem"
+    left: "&copy; Copyright 2024, Ariel Rokem, University of Washington"
 
   sidebar:
     style: "docked"
