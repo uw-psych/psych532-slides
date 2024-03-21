@@ -2,6 +2,7 @@
 title: "Reproducibility"
 format:
   revealjs:
+    incremental: true
     theme: theme.scss
     transition: fade
     background-transition: fade
@@ -67,7 +68,6 @@ Simmons, Nelson, Simonsohn, 2011
 
 ![](images/phacking.png){fig-align="right"}
 
-
 # The Open Science Collaboration
 
 - Many concerns, but little hard *evidence*.
@@ -96,3 +96,5 @@ Simmons, Nelson, Simonsohn, 2011
 # What about *generalization*?
 
 ![](images/repro_terms.png){fig-align="right"}
+
+

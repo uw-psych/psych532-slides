@@ -2,6 +2,7 @@
 title: "Doing statistics with big data"
 format:
   revealjs:
+    incremental: true
     theme: theme.scss
     transition: fade
     background-transition: fade
@@ -11,6 +12,7 @@ execute:
   echo: true
   freeze: auto
 ---
+
 
 
 # Challenges of doing statistics with big data
