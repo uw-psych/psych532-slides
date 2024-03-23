@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://uw-psych.github.io/psych532-slides/index.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/07-ethics.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/05-machine-learning.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/03-working-with-big-data.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/06-fair.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/04-stats-with-big-data.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/psych532-slides/slides/02-reproducibility.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/psych532-slides/slides/01-introduction.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/08-ethics.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/03-working-with-big-data.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/06-fair.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/07-viz.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/04-stats-with-big-data.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/02-reproducibility.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/psych532-slides/slides/05-machine-learning.html</loc>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/psych532-slides/about.html</loc>
-    <lastmod>2024-03-21T20:52:04.463Z</lastmod>
+    <lastmod>2024-03-23T13:55:20.690Z</lastmod>
   </url>
 </urlset>
