@@ -8,4 +8,5 @@ title: "Slides for Psych 532: Informatics in Psychology"
 - Statistics with Big Data [\[slides\]](slides/04-stats-with-big-data.html)
 - Machine learning [\[slides\]](slides/05-machine-learning.html)
 - The FAIR principles [\[slides\]](slides/06-fair.html)
-- Ethical considerations with Big Data [\[slides\]](slides/07-ethics.html)
+- Data visualization with Big Data [\[slides\]](slides/07-viz.html)
+- Ethical considerations with Big Data [\[slides\]](slides/08-ethics.html)

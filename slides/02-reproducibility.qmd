@@ -15,10 +15,14 @@ execute:
 
 # Why is reproducibility important?
 
+::: fragment
+![](images/nullus.png){height="500"}
+:::
+
 # What is reproducibility?
 
 ::: fragment
-![](images/repro_terms.png){fig-align="right"}
+![](images/repro_terms.png)
 :::
 
 # "Most research findings are false"
@@ -29,10 +33,12 @@ Ioannidis 2005, PLoS Medicine
 - PPV: "positive predictive value", the post-study probability that a research finding is true.
 - I.e., the chance it would replicate/generalize.
 
+::: fragment
 ::: tiny
 
-https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null-hypothesis-significance-testing/
+[https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null-hypothesis-significance-testing/](https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null-hypothesis-significance-testing/)
 
+:::
 :::
 
 # "Most research findings are false"
@@ -44,14 +50,17 @@ https://statmodeling.stat.columbia.edu/2023/07/05/on-the-past-and-future-of-null
 
 # "Most research findings are false"
 
+::: small
 - The greater the number and the lesser the selection of tested relationships in a scientific field, the less likely the research findings are to be true.
 - The greater the flexibility in designs, definitions, outcomes, and analytical modes in a scientific field, the less likely the research findings are to be true.
 - The greater the financial and other interests and prejudices in a scientific field, the less likely the research findings are to be true.
 - The hotter a scientific field (with more scientific teams involved), the less likely the research findings are to be true.
 
+:::
+
 # "Most research findings are false"
 
-![](images/ppv.png){fig-align="right"}
+![](images/ppv.png)
 
 # It gets worse...
 
@@ -66,7 +75,7 @@ Simmons, Nelson, Simonsohn, 2011
 
 # Undisclosed flexibility
 
-![](images/phacking.png){fig-align="right"}
+![](images/phacking.png)
 
 # The Open Science Collaboration
 
@@ -76,7 +85,6 @@ Simmons, Nelson, Simonsohn, 2011
 - Studies/experiments selected using a uniform approach.
 - Replications conducted in consultation with original authors.
 
-
 # Results
 
 - Using null hypothesis rejection as criterion: 35 / 97 replications.
@@ -85,16 +93,41 @@ Simmons, Nelson, Simonsohn, 2011
 
 # Results
 
-![](images/osc.png){fig-align="right"}
-
----
+![](images/osc.png)
 
 # What about *reproducibility*?
 
-![](images/repro_terms.png){fig-align="right"}
+![](images/repro_terms.png)
+
+# "Open science" approach to reproducibility
+
+- Availability of data and software:
+  - Available vs. useable
+- Automation and provenance tracking
+- Copyright issues and other encumbrances
+- Open reporting of results
 
 # What about *generalization*?
 
-![](images/repro_terms.png){fig-align="right"}
+![](images/repro_terms.png)
 
+# "The generalizability crisis"
 
+Yarkoni, 2022
+
+-
+- In practice, *reproducibility* and *generalization* may be at odds!
+- Example of the Alogna, 2014 registered replication report
+
+# What about *robustness*?
+
+![](images/repro_terms.png)
+
+# What about *robustness*?
+
+- Seems understudied, to be honest
+- Might be a nice project for this course 😀
+
+# What is important?
+
+![](images/repro_terms.png)
