@@ -2,6 +2,7 @@
 title: "Reproducibility"
 format:
   revealjs:
+    slide-number: true
     incremental: true
     theme: theme.scss
     transition: fade
@@ -19,10 +20,30 @@ execute:
 ![](images/nullus.png){height="500"}
 :::
 
+# Why is reproducibility important?
+
+> An article about computational science in a scientific publication is not the scholarship itself,
+> it is merely advertising of the scholarship. The actual scholarship is the complete software
+> development environment and the complete set of instructions which generated the figures.
+
+[Buckheit and Donoho (2010)](https://academic.oup.com/biostatistics/article/11/3/385/257703?login=true), paraphrasing Claerbout
+
+# What is reproducibility?
+
+- There is a lot of terminology confusion.
+- Different groups will use similar words to describe subtly different concepts.
+- Sometimes in exactly opposite ways.
+- See [Barba, 2018](https://arxiv.org/pdf/1802.03311.pdf) for a detailed history of this confusion.
+
 # What is reproducibility?
 
 ::: fragment
 ![](images/repro_terms.png)
+
+::: {.column-margin}
+[The Turing Way](https://book.the-turing-way.org/reproducible-research/overview/overview-definitions)
+:::
+
 :::
 
 # "Most research findings are false"
@@ -115,7 +136,7 @@ Simmons, Nelson, Simonsohn, 2011
 
 Yarkoni, 2022
 
--
+- Makes the statistical argument for an overall challenge to generalizability.
 - In practice, *reproducibility* and *generalization* may be at odds!
 - Example of the Alogna, 2014 registered replication report
 
