@@ -1,10 +1,17 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Slides for Psych 532: Informatics in Psychology",
     "section": "",
-    "text": "Introduction [slides]\nReproducibility [slides]\nWorking with Big Data [slides]\nStatistics with Big Data [slides]\nMachine learning [slides]\nThe FAIR principles [slides]\nData visualization with Big Data [slides]\nEthical considerations with Big Data [slides]",
+    "text": "Introduction [slides]\nReproducibility [slides]\nWorking with Big Data [slides]\nStatistics with Big Data [slides]\nHigh performance computing [slides]\nMachine learning [slides]\nThe FAIR principles [slides]\nData visualization with Big Data [slides]\nEthical considerations with Big Data [slides]",
     "crumbs": [
       "Home"
     ]
@@ -43,12 +50,5 @@
     "title": "Welcome to Psych 532!",
     "section": "“Greater Data Science”",
     "text": "“Greater Data Science”\n\n\n\nData Gathering, Preparation, and Exploration.\nData Representation and Transformation.\nComputing with Data.\nData Modeling.\nData Visualization and Presentation.\nScience about Data Science.\n\n\n\nSee also Cleveland (2001) “Data Science: An Action Plan for Expanding the Technical Areas of the field of Statistics”."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   }
 ]
