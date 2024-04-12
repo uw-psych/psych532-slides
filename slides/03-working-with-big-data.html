@@ -331,8 +331,109 @@
 </div>
 
 </section>
-<section class="slide level2">
+<section id="best-practices-in-naming-things-files-in-particular" class="title-slide slide level1 center">
+<h1>Best practices in naming things (files in particular)</h1>
+<ul>
+<li class="fragment">Machine readable</li>
+<li class="fragment">Human readable</li>
+<li class="fragment">Plays well with default ordering</li>
+</ul>
+<div class="{tiny}">
+<p>Based on Jenny Bryan’s work</p>
+</div>
+</section>
 
+<section id="machine-readable" class="title-slide slide level1 center">
+<h1>Machine readable</h1>
+<ul>
+<li class="fragment">Usable with regular expressions and globbing
+<ul>
+<li class="fragment">No spaces</li>
+<li class="fragment">No punctuation</li>
+<li class="fragment">No accented characters (or other funky stuff)</li>
+<li class="fragment">Case matters</li>
+</ul></li>
+<li class="fragment">Easy to use in code
+<ul>
+<li class="fragment">Use the delimiters deliberately</li>
+</ul></li>
+</ul>
+<div class="{tiny}">
+<p>Based on Jenny Bryan’s work</p>
+</div>
+</section>
+
+<section id="some-things-you-could-do" class="title-slide slide level1 center">
+<h1>Some things you could do</h1>
+
+<img data-src="images/horst-cases1.png" class="r-stretch"></section>
+
+<section id="and-a-few-you-probably-shouldnt" class="title-slide slide level1 center">
+<h1>And a few you probably shouldn’t</h1>
+
+<img data-src="images/horst-cases2.png" class="r-stretch"></section>
+
+<section id="an-extreme-example" class="title-slide slide level1 center">
+<h1>An extreme example</h1>
+<p>The Brain Imaging Data Structure (BIDS)</p>
+<p>A standard for storing and describing neuroimaging data</p>
+
+<img data-src="images/bids-logo.png" class="r-stretch"></section>
+
+<section id="the-anatomy-of-a-bids-filename" class="title-slide slide level1 center">
+<h1>The anatomy of a BIDS filename</h1>
+<p><code>key1-value_key2-value_suffix.extension</code></p>
+<ul>
+<li class="fragment">Entities are composed of key-value pairs</li>
+<li class="fragment">Suffix provides some additional information (the data type: fMRI, anatomical, etc.)</li>
+<li class="fragment">For example:
+<ul>
+<li class="fragment"><code>sub-control1</code>, <code>task-nback</code> are entities</li>
+<li class="fragment"><code>T1w</code> and <code>bold</code> are suffixes</li>
+<li class="fragment"><code>.nii.gz</code> and <code>.tsv</code> are extensions</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="this-allows-querying-on-a-large-list-of-files-with-code" class="title-slide slide level1 center">
+<h1>This allows querying on a large list of files with code</h1>
+<pre><code></code></pre>
+</section>
+
+<section id="human-readable" class="title-slide slide level1 center">
+<h1>Human readable</h1>
+<ul>
+<li class="fragment">Files that are related to each other can be visually grouped</li>
+</ul>
+</section>
+
+<section id="consider-putting-numeric-values-first" class="title-slide slide level1 center">
+<h1>Consider putting numeric values first</h1>
+
+</section>
+
+<section id="use-iso-8601-compliant-dates" class="title-slide slide level1 center">
+<h1>Use ISO 8601 compliant dates</h1>
+<ul>
+<li class="fragment">An international standard for communicating about date/time</li>
+<li class="fragment">For filenames, usually time is not relevant, but dates may be</li>
+<li class="fragment">I recommend the <code>YYYYMMDD</code> format (but also sometimes use <code>YYYY-MM-DD</code>)</li>
+</ul>
+</section>
+
+<section id="sometimes-names-are-related-to-standards" class="title-slide slide level1 center">
+<h1>Sometimes names are related to standards</h1>
+<ul>
+<li class="fragment">We saw BIDS before</li>
+<li class="fragment">Different programming languages also have standards about naming variables
+<ul>
+<li class="fragment">For example, PEP8 for Python, <a href="https://style.tidyverse.org/">tidyverse style guide</a> for R.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="tidy-data" class="title-slide slide level1 center">
+<h1>Tidy data</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
