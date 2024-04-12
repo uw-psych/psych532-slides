@@ -13,3 +13,88 @@ execute:
   freeze: auto
 ---
 
+
+# Best practices in naming things (files in particular)
+
+- Machine readable
+- Human readable
+- Plays well with default ordering
+
+
+::: {tiny}
+Based on Jenny Bryan's work
+:::
+
+# Machine readable
+
+- Usable with regular expressions and globbing
+  - No spaces
+  - No punctuation
+  - No accented characters (or other funky stuff)
+  - Case matters
+
+- Easy to use in code
+  - Use the delimiters deliberately
+
+::: {tiny}
+Based on Jenny Bryan's work
+:::
+
+# Some things you could do
+
+![](images/horst-cases1.png)
+
+
+# And a few you probably shouldn't
+
+![](images/horst-cases2.png)
+
+
+# An extreme example
+
+
+The Brain Imaging Data Structure (BIDS)
+
+A standard for storing and describing neuroimaging data
+
+![](images/bids-logo.png)
+
+
+# The anatomy of a BIDS filename
+
+`key1-value_key2-value_suffix.extension`
+
+- Entities are composed of key-value pairs
+- Suffix provides some additional information (the data type: fMRI, anatomical, etc.)
+- For example:
+  - `sub-control1`, `task-nback` are entities
+  - `T1w` and `bold` are suffixes
+  - `.nii.gz` and `.tsv` are extensions
+
+
+# This allows querying on a large list of files with code
+
+```
+
+```
+
+# Human readable
+
+- Files that are related to each other can be visually grouped
+
+# Consider putting numeric values first
+
+# Use ISO 8601 compliant dates
+
+- An international standard for communicating about date/time
+- For filenames, usually time is not relevant, but dates may be
+- I recommend the `YYYYMMDD` format (but also sometimes use `YYYY-MM-DD`)
+
+# Sometimes names are related to standards
+
+- We saw BIDS before
+- Different programming languages also have standards about naming variables
+  - For example, PEP8 for Python, [tidyverse style guide](https://style.tidyverse.org/) for R.
+
+# Tidy data
+
