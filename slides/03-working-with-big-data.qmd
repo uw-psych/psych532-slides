@@ -296,6 +296,7 @@ Using `dplyr`
 
 ## Merging across different data
 
-Let's look at this with a hands-on example
+Let's look at this with a [hands-on example](https://raw.githubusercontent.com/uw-psych/psych532-slides/main/slides/code/tidy_demo.r)
+
 
 ## We'll come back to best-practices when we talk about FAIR
