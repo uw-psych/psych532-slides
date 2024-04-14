@@ -13,19 +13,29 @@ execute:
   freeze: auto
 ---
 
+> "Happy families are all alike; every unhappy family is unhappy in its own way."
 
-# Best practices in naming things (files in particular)
+Leo Tolstoy's _Anna Karenina_ <br> (by way of Wickham, 2014)
+
+## Best practices
+
+- Good enough practices.
+- What did you take from Wilson et al.?
+- What do you think you'll start using this week?
+- What do you hope to start using in the future?
+
+
+## Best practices in naming things (files in particular)
+
+Based on Jenny Bryan's work
 
 - Machine readable
 - Human readable
 - Plays well with default ordering
 
+## Machine readable
 
-::: {tiny}
 Based on Jenny Bryan's work
-:::
-
-# Machine readable
 
 - Usable with regular expressions and globbing
   - No spaces
@@ -36,31 +46,24 @@ Based on Jenny Bryan's work
 - Easy to use in code
   - Use the delimiters deliberately
 
-::: {tiny}
-Based on Jenny Bryan's work
-:::
-
-# Some things you could do
+## Some things you could do
 
 ![](images/horst-cases1.png)
 
 
-# And a few you probably shouldn't
+## And a few you probably shouldn't (or can't)
 
 ![](images/horst-cases2.png)
 
 
-# An extreme example
-
-
-The Brain Imaging Data Structure (BIDS)
+## The Brain Imaging Data Structure (BIDS)
 
 A standard for storing and describing neuroimaging data
 
 ![](images/bids-logo.png)
 
 
-# The anatomy of a BIDS filename
+## The anatomy of a BIDS filename
 
 `key1-value_key2-value_suffix.extension`
 
@@ -72,29 +75,227 @@ A standard for storing and describing neuroimaging data
   - `.nii.gz` and `.tsv` are extensions
 
 
-# This allows querying on a large list of files with code
+## Machine readable: query on large lists of files with code
 
+```R
+> Sys.glob("~/AFQ_data/HBN/derivatives/afq/sub-*/ses-*/*model-DTI*.nii.gz")
+[1] "/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAA948VFH/ses-HBNsiteRU/sub-NDARAA948VFH_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_FA.nii.gz"
+[2] "/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAA948VFH/ses-HBNsiteRU/sub-NDARAA948VFH_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_diffmodel.nii.gz"
+[3] "/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAV554TP2/ses-HBNsiteRU/sub-NDARAV554TP2_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_FA.nii.gz"
+[4] "/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAV554TP2/ses-HBNsiteRU/sub-NDARAV554TP2_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_diffmodel.nii.gz"
 ```
 
+## Human readable
+
+- Files that are related to each other are visually grouped
+- Can use default file ordering in order to impose logical order
+
+## Consider putting numeric values first
+
+```Bash
+$ ls
+001_preprocess.R
+002_analyze.R
+003_visualize.R
 ```
 
-# Human readable
-
-- Files that are related to each other can be visually grouped
-
-# Consider putting numeric values first
-
-# Use ISO 8601 compliant dates
+## Use ISO 8601 to order by date of creation
 
 - An international standard for communicating about date/time
 - For filenames, usually time is not relevant, but dates may be
-- I recommend the `YYYYMMDD` format (but also sometimes use `YYYY-MM-DD`)
+- I recommend the `YYYYMMDD` format (but could also use `YYYY-MM-DD`)
+- In general, try to avoid reinventing the wheel
 
-# Sometimes names are related to standards
+---
+
+![](images/xkcd_standards_2x.png)
+
+[https://xkcd.com/927/](https://xkcd.com/927/)
+
+
+## More about names and standards
 
 - We saw BIDS before
 - Different programming languages also have standards about naming variables
   - For example, PEP8 for Python, [tidyverse style guide](https://style.tidyverse.org/) for R.
 
-# Tidy data
+## Metadata
 
+"Data about data"
+
+- For every data table, create a "data dictionary"
+- JavaScript Object Notation (JSON) provides a natural format for storing dictionaries
+
+::: {.fragment}
+```R
+{ # Begin with a curly brace
+"key1": <value>, # commas in-between
+"key2": [<list>, <of>, <values>], # Can be numerical, quote-enclosed string, etc.
+"key3": {"key3_1": <value>, "key3_2": <value>}, # Nesting allowed!
+} # End with a curly brace
+```
+:::
+
+## Metadata - example
+
+```JSON
+{
+    "age": {
+        "Description": "age of the participant",
+        "Units": "year"
+    },
+    "sex": {
+        "Description": "sex of the participant as reported by the participant",
+        "Levels": {
+            "M": "male",
+            "F": "female"
+        }
+    },
+    "handedness": {
+        "Description": "handedness of the participant as reported by the participant",
+        "Levels": {
+            "left": "left",
+            "right": "right"
+        }
+    },
+    "group": {
+        "Description": "experimental group the participant belonged to",
+        "Levels": {
+            "read": "participants who read an inspirational text before the experiment",
+            "write": "participants who wrote an inspirational text before the experiment"
+        }
+    }
+}
+```
+
+## Tidy data
+
+> 1. Each variable is a column; each column is a variable.
+> 2. Each observation is a row; each row is an observation.
+> 3. Each value is a cell; each cell is a single value.
+
+---
+
+|              | treatmenta | treatmentb |
+|--------------|------------|------------|
+| John Smith   | NA         | 2          |
+| Jane Doe     | 16         | 11         |
+| Mary Johnson | 3          | 1          |
+
+---
+
+|              | John Smith | Jane Doe   | Mary Johnson |
+|--------------|------------|------------|--------------|
+| treatmenta   | NA         | 16         | 3            |
+| treatmentb   | 2          | 11         | 1            |
+
+---
+
+| Person       | Treatment | Result |
+|--------------|-----------|--------|
+| John Smith   | a         | NA     |
+| Jane Doe     | a         | 16     |
+| Mary Johnson | a         | 3      |
+| John Smith   | b         | 2      |
+| Jane Doe     | b         | 11     |
+| Mary Johnson | b         | 1      |
+
+---
+
+## Variable vs. observation
+
+- It is easier to describe functional relationships between variables.
+  - `density` is the ratio of `weight` to `volume`.
+- It is easier to make comparisons between rows.
+  - E.g., Treatment `a` vs. Treatment `b`.
+- There might also be multiple levels of observation
+  - We'll see a hands-on example a little later.
+
+## "Dirty" data
+
+- Comes in all kinds of forms.
+- The article shows a few of these.
+- [This](https://tidyr.tidyverse.org/articles/tidy-data.html) annotated version shows some more code (from `tidyr`) to deal with some of these.
+
+## Data cleaning example: melting
+
+```R
+library(tidyr)
+library(tibble)
+patients <- tribble(
+  ~name,         ~treatmenta,     ~treatmentb,
+  "John Smith",   NA,             2,
+  "Jane Doe",     16,             11,
+  "Mary Johnson", 3,              1,
+  )
+```
+
+## Data cleaning example: melting
+
+```R
+> patients
+# A tibble: 3 × 3
+  name         treatmenta treatmentb
+  <chr>             <dbl>      <dbl>
+1 John Smith           NA          2
+2 Jane Doe             16         11
+3 Mary Johnson          3          1
+```
+
+## Data cleaning example: melting
+
+```R
+patients_long <- patients %>%
+  pivot_longer(cols = starts_with("treatment"),
+               names_to = "treatment",
+               values_to = "result")
+```
+
+## Data cleaning example: melting
+
+```R
+> patients_long
+# A tibble: 6 × 3
+  name         treatment  result
+  <chr>        <chr>       <dbl>
+1 John Smith   treatmenta     NA
+2 John Smith   treatmentb      2
+3 Jane Doe     treatmenta     16
+4 Jane Doe     treatmentb     11
+5 Mary Johnson treatmenta      3
+6 Mary Johnson treatmentb      1
+```
+
+
+## "Dirty" data
+
+- The best way to avoid "dirty" data is to not create it.
+  - Use form validation.
+  - Design your data "schema" with tidy data in mind.
+
+## Benefits of tidy data
+
+- Tidy tools: tools that take tidy data as input and produce tidy data as output.
+- A grammar of data analysis: `dplyr`
+- A grammar of visualization: `ggplot2`
+- Modeling: `lme4` etc.
+
+## Workflows that are enabled by tidy data
+
+- Split-apply-combine
+- Merging between measurements
+
+## Split-apply-combine
+
+Using `dplyr`
+
+- Minimally: `group_by %>% summarize`
+- But also: `filter %>% group_by %>% summarise`
+- And even: `filter %>% group_by %>% summarise %>% aggregate`
+- For some nice examples see [this notebook](https://pages.stat.wisc.edu/~yandell/R_for_data_sciences/curate/tidyverse.html)
+
+## Merging across different data
+
+Let's look at this with a hands-on example
+
+## We'll come back to best-practices when we talk about FAIR
