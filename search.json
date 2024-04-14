@@ -50,5 +50,194 @@
     "title": "Welcome to Psych 532!",
     "section": "“Greater Data Science”",
     "text": "“Greater Data Science”\n\n\n\nData Gathering, Preparation, and Exploration.\nData Representation and Transformation.\nComputing with Data.\nData Modeling.\nData Visualization and Presentation.\nScience about Data Science.\n\n\n\nSee also Cleveland (2001) “Data Science: An Action Plan for Expanding the Technical Areas of the field of Statistics”."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#best-practices",
+    "href": "slides/03-working-with-big-data.html#best-practices",
+    "title": "Working with Big Data",
+    "section": "Best practices",
+    "text": "Best practices\n\nGood enough practices.\nWhat did you take from Wilson et al.?\nWhat do you think you’ll start using this week?\nWhat do you hope to start using in the future?"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#best-practices-in-naming-things-files-in-particular",
+    "href": "slides/03-working-with-big-data.html#best-practices-in-naming-things-files-in-particular",
+    "title": "Working with Big Data",
+    "section": "Best practices in naming things (files in particular)",
+    "text": "Best practices in naming things (files in particular)\nBased on Jenny Bryan’s work\n\nMachine readable\nHuman readable\nPlays well with default ordering"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#machine-readable",
+    "href": "slides/03-working-with-big-data.html#machine-readable",
+    "title": "Working with Big Data",
+    "section": "Machine readable",
+    "text": "Machine readable\nBased on Jenny Bryan’s work\n\nUsable with regular expressions and globbing\n\nNo spaces\nNo punctuation\nNo accented characters (or other funky stuff)\nCase matters\n\nEasy to use in code\n\nUse the delimiters deliberately"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#some-things-you-could-do",
+    "href": "slides/03-working-with-big-data.html#some-things-you-could-do",
+    "title": "Working with Big Data",
+    "section": "Some things you could do",
+    "text": "Some things you could do"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#and-a-few-you-probably-shouldnt-or-cant",
+    "href": "slides/03-working-with-big-data.html#and-a-few-you-probably-shouldnt-or-cant",
+    "title": "Working with Big Data",
+    "section": "And a few you probably shouldn’t (or can’t)",
+    "text": "And a few you probably shouldn’t (or can’t)"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#the-brain-imaging-data-structure-bids",
+    "href": "slides/03-working-with-big-data.html#the-brain-imaging-data-structure-bids",
+    "title": "Working with Big Data",
+    "section": "The Brain Imaging Data Structure (BIDS)",
+    "text": "The Brain Imaging Data Structure (BIDS)\nA standard for storing and describing neuroimaging data"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#the-anatomy-of-a-bids-filename",
+    "href": "slides/03-working-with-big-data.html#the-anatomy-of-a-bids-filename",
+    "title": "Working with Big Data",
+    "section": "The anatomy of a BIDS filename",
+    "text": "The anatomy of a BIDS filename\nkey1-value_key2-value_suffix.extension\n\nEntities are composed of key-value pairs\nSuffix provides some additional information (the data type: fMRI, anatomical, etc.)\nFor example:\n\nsub-control1, task-nback are entities\nT1w and bold are suffixes\n.nii.gz and .tsv are extensions"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#machine-readable-query-on-large-lists-of-files-with-code",
+    "href": "slides/03-working-with-big-data.html#machine-readable-query-on-large-lists-of-files-with-code",
+    "title": "Working with Big Data",
+    "section": "Machine readable: query on large lists of files with code",
+    "text": "Machine readable: query on large lists of files with code\n&gt; Sys.glob(\"~/AFQ_data/HBN/derivatives/afq/sub-*/ses-*/*model-DTI*.nii.gz\")\n[1] \"/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAA948VFH/ses-HBNsiteRU/sub-NDARAA948VFH_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_FA.nii.gz\"\n[2] \"/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAA948VFH/ses-HBNsiteRU/sub-NDARAA948VFH_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_diffmodel.nii.gz\"\n[3] \"/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAV554TP2/ses-HBNsiteRU/sub-NDARAV554TP2_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_FA.nii.gz\"\n[4] \"/Users/arokem/AFQ_data/HBN/derivatives/afq/sub-NDARAV554TP2/ses-HBNsiteRU/sub-NDARAV554TP2_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_model-DTI_diffmodel.nii.gz\""
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#human-readable",
+    "href": "slides/03-working-with-big-data.html#human-readable",
+    "title": "Working with Big Data",
+    "section": "Human readable",
+    "text": "Human readable\n\nFiles that are related to each other are visually grouped\nCan use default file ordering in order to impose logical order"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#consider-putting-numeric-values-first",
+    "href": "slides/03-working-with-big-data.html#consider-putting-numeric-values-first",
+    "title": "Working with Big Data",
+    "section": "Consider putting numeric values first",
+    "text": "Consider putting numeric values first\n$ ls\n001_preprocess.R\n002_analyze.R\n003_visualize.R"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#use-iso-8601-to-order-by-date-of-creation",
+    "href": "slides/03-working-with-big-data.html#use-iso-8601-to-order-by-date-of-creation",
+    "title": "Working with Big Data",
+    "section": "Use ISO 8601 to order by date of creation",
+    "text": "Use ISO 8601 to order by date of creation\n\nAn international standard for communicating about date/time\nFor filenames, usually time is not relevant, but dates may be\nI recommend the YYYYMMDD format (but could also use YYYY-MM-DD)\nIn general, try to avoid reinventing the wheel"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#more-about-names-and-standards",
+    "href": "slides/03-working-with-big-data.html#more-about-names-and-standards",
+    "title": "Working with Big Data",
+    "section": "More about names and standards",
+    "text": "More about names and standards\n\nWe saw BIDS before\nDifferent programming languages also have standards about naming variables\n\nFor example, PEP8 for Python, tidyverse style guide for R."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#metadata",
+    "href": "slides/03-working-with-big-data.html#metadata",
+    "title": "Working with Big Data",
+    "section": "Metadata",
+    "text": "Metadata\n“Data about data”\n\nFor every data table, create a “data dictionary”\nJavaScript Object Notation (JSON) provides a natural format for storing dictionaries\n\n\n{ # Begin with a curly brace\n\"key1\": &lt;value&gt;, # commas in-between\n\"key2\": [&lt;list&gt;, &lt;of&gt;, &lt;values&gt;], # Can be numerical, quote-enclosed string, etc.\n\"key3\": {\"key3_1\": &lt;value&gt;, \"key3_2\": &lt;value&gt;}, # Nesting allowed!\n} # End with a curly brace"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#metadata---example",
+    "href": "slides/03-working-with-big-data.html#metadata---example",
+    "title": "Working with Big Data",
+    "section": "Metadata - example",
+    "text": "Metadata - example\n{\n    \"age\": {\n        \"Description\": \"age of the participant\",\n        \"Units\": \"year\"\n    },\n    \"sex\": {\n        \"Description\": \"sex of the participant as reported by the participant\",\n        \"Levels\": {\n            \"M\": \"male\",\n            \"F\": \"female\"\n        }\n    },\n    \"handedness\": {\n        \"Description\": \"handedness of the participant as reported by the participant\",\n        \"Levels\": {\n            \"left\": \"left\",\n            \"right\": \"right\"\n        }\n    },\n    \"group\": {\n        \"Description\": \"experimental group the participant belonged to\",\n        \"Levels\": {\n            \"read\": \"participants who read an inspirational text before the experiment\",\n            \"write\": \"participants who wrote an inspirational text before the experiment\"\n        }\n    }\n}"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#tidy-data",
+    "href": "slides/03-working-with-big-data.html#tidy-data",
+    "title": "Working with Big Data",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#variable-vs.-observation",
+    "href": "slides/03-working-with-big-data.html#variable-vs.-observation",
+    "title": "Working with Big Data",
+    "section": "Variable vs. observation",
+    "text": "Variable vs. observation\n\nIt is easier to describe functional relationships between variables.\n\ndensity is the ratio of weight to volume.\n\nIt is easier to make comparisons between rows.\n\nE.g., Treatment a vs. Treatment b.\n\nThere might also be multiple levels of observation\n\nWe’ll see a hands-on example a little later."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#dirty-data",
+    "href": "slides/03-working-with-big-data.html#dirty-data",
+    "title": "Working with Big Data",
+    "section": "“Dirty” data",
+    "text": "“Dirty” data\n\nComes in all kinds of forms.\nThe article shows a few of these.\nThis annotated version shows some more code (from tidyr) to deal with some of these."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#data-cleaning-example-melting",
+    "href": "slides/03-working-with-big-data.html#data-cleaning-example-melting",
+    "title": "Working with Big Data",
+    "section": "Data cleaning example: melting",
+    "text": "Data cleaning example: melting\nlibrary(tidyr)\nlibrary(tibble)\npatients &lt;- tribble(\n  ~name,         ~treatmenta,     ~treatmentb,\n  \"John Smith\",   NA,             2,\n  \"Jane Doe\",     16,             11,\n  \"Mary Johnson\", 3,              1,\n  )"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#data-cleaning-example-melting-1",
+    "href": "slides/03-working-with-big-data.html#data-cleaning-example-melting-1",
+    "title": "Working with Big Data",
+    "section": "Data cleaning example: melting",
+    "text": "Data cleaning example: melting\n&gt; patients\n# A tibble: 3 × 3\n  name         treatmenta treatmentb\n  &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;\n1 John Smith           NA          2\n2 Jane Doe             16         11\n3 Mary Johnson          3          1"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#data-cleaning-example-melting-2",
+    "href": "slides/03-working-with-big-data.html#data-cleaning-example-melting-2",
+    "title": "Working with Big Data",
+    "section": "Data cleaning example: melting",
+    "text": "Data cleaning example: melting\npatients_long &lt;- patients %&gt;%\n  pivot_longer(cols = starts_with(\"treatment\"),\n               names_to = \"treatment\",\n               values_to = \"result\")"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#data-cleaning-example-melting-3",
+    "href": "slides/03-working-with-big-data.html#data-cleaning-example-melting-3",
+    "title": "Working with Big Data",
+    "section": "Data cleaning example: melting",
+    "text": "Data cleaning example: melting\n&gt; patients_long\n# A tibble: 6 × 3\n  name         treatment  result\n  &lt;chr&gt;        &lt;chr&gt;       &lt;dbl&gt;\n1 John Smith   treatmenta     NA\n2 John Smith   treatmentb      2\n3 Jane Doe     treatmenta     16\n4 Jane Doe     treatmentb     11\n5 Mary Johnson treatmenta      3\n6 Mary Johnson treatmentb      1"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#dirty-data-1",
+    "href": "slides/03-working-with-big-data.html#dirty-data-1",
+    "title": "Working with Big Data",
+    "section": "“Dirty” data",
+    "text": "“Dirty” data\n\nThe best way to avoid “dirty” data is to not create it.\n\nUse form validation.\nDesign your data “schema” with tidy data in mind."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#benefits-of-tidy-data",
+    "href": "slides/03-working-with-big-data.html#benefits-of-tidy-data",
+    "title": "Working with Big Data",
+    "section": "Benefits of tidy data",
+    "text": "Benefits of tidy data\n\nTidy tools: tools that take tidy data as input and produce tidy data as output.\nA grammar of data analysis: dplyr\nA grammar of visualization: ggplot2\nModeling: lme4 etc."
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#workflows-that-are-enabled-by-tidy-data",
+    "href": "slides/03-working-with-big-data.html#workflows-that-are-enabled-by-tidy-data",
+    "title": "Working with Big Data",
+    "section": "Workflows that are enabled by tidy data",
+    "text": "Workflows that are enabled by tidy data\n\nSplit-apply-combine\nMerging between measurements"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#split-apply-combine",
+    "href": "slides/03-working-with-big-data.html#split-apply-combine",
+    "title": "Working with Big Data",
+    "section": "Split-apply-combine",
+    "text": "Split-apply-combine\nUsing dplyr\n\nMinimally: group_by %&gt;% summarize\nBut also: filter %&gt;% group_by %&gt;% summarise\nAnd even: filter %&gt;% group_by %&gt;% summarise %&gt;% aggregate\nFor some nice examples see this notebook"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#merging-across-different-data",
+    "href": "slides/03-working-with-big-data.html#merging-across-different-data",
+    "title": "Working with Big Data",
+    "section": "Merging across different data",
+    "text": "Merging across different data\nLet’s look at this with a hands-on example"
+  },
+  {
+    "objectID": "slides/03-working-with-big-data.html#well-come-back-to-best-practices-when-we-talk-about-fair",
+    "href": "slides/03-working-with-big-data.html#well-come-back-to-best-practices-when-we-talk-about-fair",
+    "title": "Working with Big Data",
+    "section": "We’ll come back to best-practices when we talk about FAIR",
+    "text": "We’ll come back to best-practices when we talk about FAIR"
   }
 ]
