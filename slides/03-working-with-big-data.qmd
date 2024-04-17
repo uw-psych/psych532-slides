@@ -117,7 +117,7 @@ $ ls
 
 - We saw BIDS before
 - Different programming languages also have standards about naming variables
-  - For example, PEP8 for Python, [tidyverse style guide](https://style.tidyverse.org/) for R.
+  - For example, [PEP8 for Python](https://peps.python.org/pep-0008/), [tidyverse style guide](https://style.tidyverse.org/) for R.
 
 ## Metadata
 
