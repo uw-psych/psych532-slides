@@ -25,7 +25,7 @@ execute:
 - I am a Research Associate Professor in the Department.
 - My group is the [Neuroinformatics R\&D Group](https://neuroinformatics.uw.edu).
 - My email address is [arokem@uw.edu](mailto:arokem@uw.edu).
-- More about course communications below.
+- More about course communications, below.
 
 # Course mechanics
 
