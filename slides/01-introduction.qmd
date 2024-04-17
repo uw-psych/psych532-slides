@@ -15,6 +15,7 @@ execute:
 
 ## Today
 
+- Hello!
 - Some course mechanics
 - The intellectual foundations of data science
 
