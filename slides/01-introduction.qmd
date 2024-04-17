@@ -13,7 +13,7 @@ execute:
   freeze: auto
 ---
 
-## Today
+## Today's agenda
 
 - Hello
 - Some course mechanics
