@@ -19,7 +19,7 @@ patients_long
 
 # Demonstrate split-apply-combine
 library(dplyr)
-library(ggplot)
+library(ggplot2)
 
 subjects <- read.csv(
     "https://yeatmanlab.github.io/AFQBrowser-demo/data/subjects.csv")
@@ -38,18 +38,20 @@ age_by_gender <- group_by(subjects, Gender) %>%
 age_by_gender %>% head()
 
 group_by(subjects, Gender) %>%
-    summarise(Age=mean(Age), IQ=mean(IQ, na.rm=TRUE))
+    summarise(Age = mean(Age), IQ = mean(IQ, na.rm = TRUE))
 
 subjects %>%
   group_by(Gender) %>%
-  summarise(Age = mean(Age), IQ=mean(IQ)) %>%
+  summarise(Age = mean(Age), IQ = mean(IQ)) %>%
   arrange(Gender)
 
 # Merging
 nodes <- read.csv(
     "https://yeatmanlab.github.io/AFQBrowser-demo/data/nodes.csv")
 
-nodes_and_subjects <- inner_join(subjects, nodes, by="subjectID")
+nodes %>% head()
+
+nodes_and_subjects <- inner_join(subjects, nodes, by = "subjectID")
 
 nodes_and_subjects <- mutate(
     nodes_and_subjects,
