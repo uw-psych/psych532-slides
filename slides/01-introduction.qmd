@@ -13,8 +13,9 @@ execute:
   freeze: auto
 ---
 
-## Today
+## Today's agenda
 
+- Hello
 - Some course mechanics
 - The intellectual foundations of data science
 
@@ -24,7 +25,7 @@ execute:
 - I am a Research Associate Professor in the Department.
 - My group is the [Neuroinformatics R\&D Group](https://neuroinformatics.uw.edu).
 - My email address is [arokem@uw.edu](mailto:arokem@uw.edu).
-- More about course communications below.
+- More about course communications, below.
 
 # Course mechanics
 
@@ -32,7 +33,7 @@ Course website:
 
 [https://uw-psych.github.io/2024-psych532/](https://uw-psych.github.io/2024-psych532/)
 
-## The course meets twice a week and will include three types of sessions
+## The course meets twice a week and will include three types of sessions:
 
 - Lectures
 - Lab
@@ -94,7 +95,7 @@ Show (and discuss) the "plumbing"
 # If you have questions:
 
 - [Course GitHub Discussions](https://github.com/uw-psych/2024-psych532/discussions).
-- Please use this forum for questions that others ma
+- Please use this forum for questions that others may be able to help with.
 - Email me: [arokem@uw.edu](mailto:arokem@uw.edu).
 - Please use "[PSYCH532]" in the subject line of your email so I don't lose it.
 
