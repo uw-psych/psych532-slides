@@ -13,7 +13,7 @@ execute:
   freeze: auto
 ---
 
-## Today
+## Today's agenda
 
 - Hello
 - Some course mechanics
@@ -95,7 +95,7 @@ Show (and discuss) the "plumbing"
 # If you have questions:
 
 - [Course GitHub Discussions](https://github.com/uw-psych/2024-psych532/discussions).
-- Please use this forum for questions that others ma
+- Please use this forum for questions that others may be able to help with.
 - Email me: [arokem@uw.edu](mailto:arokem@uw.edu).
 - Please use "[PSYCH532]" in the subject line of your email so I don't lose it.
 
