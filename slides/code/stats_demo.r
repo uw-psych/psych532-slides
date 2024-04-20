@@ -1,7 +1,8 @@
-# I used co-pilot to program some these examples. In particular, co-pilot helped
-# me understand how "boot" works, suggested ideas for datasets to use in
-# examples and helped correct string formatting issues. I also used it to
-# debug broadcasting in R (which is differet from Python...).
+# I used co-pilot to program some these examples. In particular, since I am new
+# to using R, but have a lot of experience in another language, I used the
+# "chat" functionality to help translate code snippets. It also helped me
+# understand how "boot" works, suggested ideas for datasets to use in examples
+# and helped correct string formatting issues and debug broadcasting errors.
 
 library(boot)
 
