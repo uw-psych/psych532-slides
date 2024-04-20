@@ -13,20 +13,63 @@ execute:
   freeze: auto
 ---
 
-# Challenges of doing statistics with big data
+# Statistics with Big Data
+
+- The curse of dimensionality.
+- The challenges of null hypothesis statistical testing.
+- Visualization as a solution.
+- Statistical solutions.
+  - Resampling.
+  - The Jackknife.
+  - The Bootstrap.
+
+# Big data
 
 Data can be "big" in two different ways:
 
-- Many rows in the table (large $n$)
-- Many columns in the table (large $p$)
+- Many rows in the table (large $n$).
+- Many columns in the table (large $p$).
+- Both of these present statistical challenges.
+- A lot of attention has been put on large $n$ as a solution to Reproducibility challenges.
 
-Both of these present statistical challenges
+---
 
-- We'll come back to the issue of large $p$
+![](./images/witten_pvalues.png)
 
-# Large $p$: the curse of dimensionality
+# What's wrong with NHST?
 
-# Challenges of doing statistics with big data
+1. $H_0$ is wrong by definition
+2. Rejection of the null hypothesis provides very little useful information
+3. Type II errors are usually unquantified/unquantifiable.
+4. Dichotomous with fundamentally arbitrary threshold.
+5. Hard to use unless you restrict yourself to linear models.
+
+---
+
+![](./images/loftus_anova_fallacy.png)
+
+
+# The Bayesian objection
+
+- $H_0$ is rejected when.
+  - $p(data | H_0) < 0.05$.
+- But inference is often.
+  - $p(H_0 | data) is small$.
+- Which may or may not be true depending on the prior of $H_0$.
+- Making $\alpha = 0.05$ even more arbitrary.
+
+# What should we do?
+
+- Plot the data.
+- Use confidence intervals.
+  - If you are using 'mixed' factorial designs, use ["within subject CIs"](https://link.springer.com/content/pdf/10.3758/BF03210951.pdf)
+- Use meta analysis.
+- Use an explicit model.
+- Or when pressed approximate your model with "planned comparisons".
+
+# Plotting your data
+
+
 
 # Computing to the rescue
 
@@ -127,3 +170,24 @@ by Tim Hesterberg.
 - Ensemble methods:
   - [Bagging (bootstrap aggregation)](https://link.springer.com/article/10.1007/BF00058655)
   - [Random forests](https://link.springer.com/article/10.1023/A:1010933404324)
+
+# The curse of dimensionality
+
+What about large $p$
+
+- There be dragons
+
+
+# Data is sparser in higher dimensions
+
+
+# The distance between points increases rapidly
+
+# When $p$ > $n$ multi-colinearity exists
+
+# The false positive rate increases
+
+# Machine learning to the rescue?
+
+- Next time, we'll look at some methods that are designed to deal with the curse of dimensionality
+- And may also help with some of the conceptual issues mentioned above.
