@@ -396,7 +396,7 @@
 <section id="the-jackknife-1" class="title-slide slide level1 center">
 <h1>The jackknife</h1>
 <ul>
-<li class="fragment">The bias of the jackknife is smaller than the bias of <span class="math inline">\(\theta\)</span></li>
+<li class="fragment">The bias of the jackknife is smaller than the bias of <span class="math inline">\(\theta\)</span> (why?)</li>
 <li class="fragment">Can also be used to estimate the bias of <span class="math inline">\(\theta\)</span>:
 <ul>
 <li class="fragment"><span class="math inline">\(\hat{B} =  \hat{\theta} - \theta\)</span></li>
@@ -422,7 +422,7 @@
 
 <section id="the-bootstrap" class="title-slide slide level1 center">
 <h1>The bootstrap</h1>
-<p>Invented by Bradley Efron - See <a href="https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V">interview</a> for the back-story. - Very general in its application - Consider a statistic <span class="math inline">\(\theta(X)\)</span> - For i in <span class="math inline">\(1...b\)</span> - Sample <span class="math inline">\(n\)</span> samples <em>with replacement</em>: <span class="math inline">\(X_b\)</span> - In the pseudo-sample, calculate <span class="math inline">\(\theta(X_b)\)</span> and store the value - Standard error is the central 68% of the distribution. - The 95% confidence interval is in the interval between 2.5 and 97.5.</p>
+<p>Invented by Bradley Efron - See <a href="https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V">interview</a> for the back-story. - Very general in its application - Consider a statistic <span class="math inline">\(\theta(X)\)</span> - For i in <span class="math inline">\(1...b\)</span> - Sample <span class="math inline">\(n\)</span> samples <em>with replacement</em>: <span class="math inline">\(X_b\)</span> - In the pseudo-sample, calculate <span class="math inline">\(\theta(X_b)\)</span> and store the value - Standard error is the sample standard deviation of <span class="math inline">\(\theta\)</span>: - <span class="math inline">\(\sqrt(\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2})\)</span> - Bias can be estimated as: - <span class="math inline">\(\theta{X} - \bar{theta}\)</span> (why?) - The 95% confidence interval is in the interval between 2.5 and 97.5.</p>
 </section>
 
 <section id="why-is-the-bootstrap-so-effective" class="title-slide slide level1 center">
@@ -430,6 +430,10 @@
 <ul>
 <li class="fragment">Alleviates distributional assumptions required with other methods.</li>
 <li class="fragment">Flexible to the statistic that is being interrogated</li>
+<li class="fragment">Allows interrogating sampling procedures
+<ul>
+<li class="fragment">For example, sample with and without stratification and compare SE.</li>
+</ul></li>
 <li class="fragment">Supports model fitting.</li>
 <li class="fragment">And other complex procedures.</li>
 <li class="fragment">Efron argues that this is the natural procedure Fisher et al.&nbsp;would have preferred in the 20’s if they had computers.</li>
@@ -439,7 +443,7 @@
 <section id="when-efron-talks-about-computers" class="title-slide slide level1 center">
 <h1>When Efron talks about computers</h1>
 <div class="fragment">
-<p>They are talking about this:</p>
+<p>He’s talking about this:</p>
 <p><img data-src="./images/computers_in_1983.png"></p>
 </div>
 </section>
@@ -447,6 +451,34 @@
 <section id="demo-1" class="title-slide slide level1 center">
 <h1>Demo</h1>
 
+</section>
+
+<section id="a-few-pitfalls-of-the-bootstrap" class="title-slide slide level1 center">
+<h1>A few pitfalls of the bootstrap</h1>
+<p>Based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4784504/">“What Teachers Should Know About the Bootstrap: Resampling in the Undergraduate Statistics Curriculum”</a> by Tim Hesterberg.</p>
+</section>
+
+<section id="a-few-pitfalls" class="title-slide slide level1 center">
+<h1>A few pitfalls</h1>
+<ul>
+<li class="fragment">Estimates of SE tend to bias downward in small samples.
+<ul>
+<li class="fragment">By a factor of <span class="math inline">\(\sqrt\frac{n-1}{n}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(b\)</span> is a meta-parameter that needs to be determined
+<ul>
+<li class="fragment">Efron originally claimed that <span class="math inline">\(b=1,000\)</span> should suffice</li>
+<li class="fragment">Hesterberg says at least 15k is required to have a 95% of being within 10% of ground truth p-values.</li>
+</ul></li>
+<li class="fragment">Comparing distributions by comparing their 95% CI.
+<ul>
+<li class="fragment">Should compare the distribution of sampled differences instead!</li>
+</ul></li>
+<li class="fragment">In modeling: bootstrapping observations rather than bootstrapping the residuals
+<ul>
+<li class="fragment">Residuals are preferable when considering a designed experiment with fixed levels of an IV.</li>
+</ul></li>
+</ul>
 </section>
 
 <section id="building-on-the-bootstrap" class="title-slide slide level1 center">
@@ -458,26 +490,6 @@
 <li class="fragment"><a href="https://link.springer.com/article/10.1023/A:1010933404324">Random forests</a></li>
 </ul></li>
 </ul>
-</section>
-
-<section id="a-few-pitfalls-of-the-bootstrap" class="title-slide slide level1 center">
-<h1>A few pitfalls of the bootstrap</h1>
-<p>Based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4784504/">“What Teachers Should Know About the Bootstrap: Resampling in the Undergraduate Statistics Curriculum”</a> by Tim Hesterberg.</p>
-</section>
-
-<section id="a-few-pitfalls-to-know-about" class="title-slide slide level1 center">
-<h1>A few pitfalls to know about</h1>
-<ul>
-<li class="fragment">Inaccurate confidence intervals
-<ul>
-<li class="fragment">Particularly for small sample sizes</li>
-<li class="fragment">In samples with less than</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="a-few-pitfalls-to-know-about-1" class="title-slide slide level1 center">
-<h1>A few pitfalls to know about</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
