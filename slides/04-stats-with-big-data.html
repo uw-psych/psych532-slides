@@ -339,10 +339,145 @@
 <li class="fragment">Many columns in the table (large <span class="math inline">\(p\)</span>)</li>
 </ul>
 <p>Both of these present statistical challenges</p>
+<ul>
+<li class="fragment">We’ll come back to the issue of large <span class="math inline">\(p\)</span></li>
+</ul>
 </section>
 
 <section id="large-p-the-curse-of-dimensionality" class="title-slide slide level1 center">
 <h1>Large <span class="math inline">\(p\)</span>: the curse of dimensionality</h1>
+
+</section>
+
+<section id="challenges-of-doing-statistics-with-big-data-1" class="title-slide slide level1 center">
+<h1>Challenges of doing statistics with big data</h1>
+
+</section>
+
+<section id="computing-to-the-rescue" class="title-slide slide level1 center">
+<h1>Computing to the rescue</h1>
+
+</section>
+
+<section id="resampling-methods" class="title-slide slide level1 center">
+<h1>Resampling methods</h1>
+<ul>
+<li class="fragment">Jackknife</li>
+<li class="fragment">Cross-validation</li>
+<li class="fragment">Permutation testing</li>
+<li class="fragment">Bootstrapping</li>
+</ul>
+</section>
+
+<section id="the-jackknife" class="title-slide slide level1 center">
+<h1>The Jackknife</h1>
+<ul>
+<li class="fragment">Originally invented by statistician Maurice Quenouille in the 40’s.</li>
+<li class="fragment">Championed by Tukey, who also named it for its versatility and utility.</li>
+<li class="fragment">The mechanics:</li>
+<li class="fragment">Consider the statistic <span class="math inline">\(\theta(X)\)</span> calculated for data set <span class="math inline">\(X\)</span></li>
+<li class="fragment">Let the sample size of the data be <span class="math inline">\(X\)</span> be <span class="math inline">\(n\)</span></li>
+<li class="fragment">For i in 1…<span class="math inline">\(n\)</span>
+<ul>
+<li class="fragment">Remove the <span class="math inline">\(i^{th}\)</span> observation</li>
+<li class="fragment">Calculate <span class="math inline">\(\theta_i = \theta(X_{-i})\)</span> and store the value</li>
+</ul></li>
+<li class="fragment">The jacknife estimate of is:
+<ul>
+<li class="fragment"><span class="math inline">\(\hat{\theta} = \frac{1}{n} \sum_{i}{\theta_i}\)</span></li>
+</ul></li>
+<li class="fragment">The estimate of the standard error <span class="math inline">\(SE(S)\)</span> is:
+<ul>
+<li class="fragment">$SE_= $</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="the-jackknife-1" class="title-slide slide level1 center">
+<h1>The jackknife</h1>
+<ul>
+<li class="fragment">The bias of the jackknife is smaller than the bias of <span class="math inline">\(\theta\)</span></li>
+<li class="fragment">Can also be used to estimate the bias of <span class="math inline">\(\theta\)</span>:
+<ul>
+<li class="fragment"><span class="math inline">\(\hat{B} =  \hat{\theta} - \theta\)</span></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="demo" class="title-slide slide level1 center">
+<h1>Demo</h1>
+
+</section>
+
+<section id="some-limitations" class="title-slide slide level1 center">
+<h1>Some limitations</h1>
+<ul>
+<li class="fragment">Assumes data is IID</li>
+<li class="fragment">Assumes that <span class="math inline">\(\theta\)</span> is $ (,,^{2}) $</li>
+<li class="fragment">Can fail badly with non-smooth estimators (e.g., median)</li>
+<li class="fragment">We’ll talk about cross-validation next week.</li>
+<li class="fragment">And we may or may not come back to permutations later on.</li>
+</ul>
+</section>
+
+<section id="the-bootstrap" class="title-slide slide level1 center">
+<h1>The bootstrap</h1>
+<p>Invented by Bradley Efron - See <a href="https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V">interview</a> for the back-story. - Very general in its application - Consider a statistic <span class="math inline">\(\theta(X)\)</span> - For i in <span class="math inline">\(1...b\)</span> - Sample <span class="math inline">\(n\)</span> samples <em>with replacement</em>: <span class="math inline">\(X_b\)</span> - In the pseudo-sample, calculate <span class="math inline">\(\theta(X_b)\)</span> and store the value - Standard error is the central 68% of the distribution. - The 95% confidence interval is in the interval between 2.5 and 97.5.</p>
+</section>
+
+<section id="why-is-the-bootstrap-so-effective" class="title-slide slide level1 center">
+<h1>Why is the bootstrap so effective?</h1>
+<ul>
+<li class="fragment">Alleviates distributional assumptions required with other methods.</li>
+<li class="fragment">Flexible to the statistic that is being interrogated</li>
+<li class="fragment">Supports model fitting.</li>
+<li class="fragment">And other complex procedures.</li>
+<li class="fragment">Efron argues that this is the natural procedure Fisher et al.&nbsp;would have preferred in the 20’s if they had computers.</li>
+</ul>
+</section>
+
+<section id="when-efron-talks-about-computers" class="title-slide slide level1 center">
+<h1>When Efron talks about computers</h1>
+<div class="fragment">
+<p>They are talking about this:</p>
+<p><img data-src="./images/computers_in_1983.png"></p>
+</div>
+</section>
+
+<section id="demo-1" class="title-slide slide level1 center">
+<h1>Demo</h1>
+
+</section>
+
+<section id="building-on-the-bootstrap" class="title-slide slide level1 center">
+<h1>Building on the bootstrap</h1>
+<ul>
+<li class="fragment">Ensemble methods:
+<ul>
+<li class="fragment"><a href="https://link.springer.com/article/10.1007/BF00058655">Bagging (bootstrap aggregation)</a></li>
+<li class="fragment"><a href="https://link.springer.com/article/10.1023/A:1010933404324">Random forests</a></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="a-few-pitfalls-of-the-bootstrap" class="title-slide slide level1 center">
+<h1>A few pitfalls of the bootstrap</h1>
+<p>Based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4784504/">“What Teachers Should Know About the Bootstrap: Resampling in the Undergraduate Statistics Curriculum”</a> by Tim Hesterberg.</p>
+</section>
+
+<section id="a-few-pitfalls-to-know-about" class="title-slide slide level1 center">
+<h1>A few pitfalls to know about</h1>
+<ul>
+<li class="fragment">Inaccurate confidence intervals
+<ul>
+<li class="fragment">Particularly for small sample sizes</li>
+<li class="fragment">In samples with less than</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="a-few-pitfalls-to-know-about-1" class="title-slide slide level1 center">
+<h1>A few pitfalls to know about</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
