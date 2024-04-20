@@ -54,7 +54,7 @@ Both of these present statistical challenges
 
 # The jackknife
 
-- The bias of the jackknife is smaller than the bias of $\theta$
+- The bias of the jackknife is smaller than the bias of $\theta$ (why?)
 - Can also be used to estimate the bias of $\theta$:
   - $\hat{B} =  \hat{\theta} - \theta$
 
@@ -77,13 +77,18 @@ Invented by Bradley Efron
 - For i in $1...b$
   - Sample $n$ samples _with replacement_: $X_b$
   - In the pseudo-sample, calculate $\theta(X_b)$ and store the value
-- Standard error is the central 68% of the distribution.
+- Standard error is the sample standard deviation of $\theta$:
+  - $\sqrt(\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2})$
+- Bias can be estimated as:
+  - $\theta{X} - \bar{theta}$ (why?)
 - The 95% confidence interval is in the interval between 2.5 and 97.5.
 
 # Why is the bootstrap so effective?
 
 - Alleviates distributional assumptions required with other methods.
 - Flexible to the statistic that is being interrogated
+- Allows interrogating sampling procedures
+  - For example, sample with and without stratification and compare SE.
 - Supports model fitting.
 - And other complex procedures.
 - Efron argues that this is the natural procedure Fisher et al. would have preferred in the 20's if they had computers.
@@ -92,7 +97,7 @@ Invented by Bradley Efron
 
 ::: {.fragment}
 
-They are talking about this:
+He's talking about this:
 
 ![](./images/computers_in_1983.png)
 
@@ -100,26 +105,25 @@ They are talking about this:
 
 # Demo
 
-# Building on the bootstrap
-
-- Ensemble methods:
-  - [Bagging (bootstrap aggregation)](https://link.springer.com/article/10.1007/BF00058655)
-  - [Random forests](https://link.springer.com/article/10.1023/A:1010933404324)
-
-
 # A few pitfalls of the bootstrap
 
 Based on ["What Teachers Should Know About the Bootstrap: Resampling in the Undergraduate Statistics Curriculum"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4784504/)
 by Tim Hesterberg.
 
-# A few pitfalls to know about
+# A few pitfalls
 
-- Inaccurate confidence intervals
-  - Particularly for small sample sizes
-  - In samples with less than
+- Estimates of SE tend to bias downward in small samples.
+  - By a factor of $\sqrt\frac{n-1}{n}$
+- $b$ is a meta-parameter that needs to be determined
+  - Efron originally claimed that $b=1,000$ should suffice
+  - Hesterberg says at least 15k is required to have a 95% of being within 10% of ground truth p-values.
+- Comparing distributions by comparing their 95% CI.
+  - Should compare the distribution of sampled differences instead!
+- In modeling: bootstrapping observations rather than bootstrapping the residuals
+  - Residuals are preferable when considering a designed experiment with fixed levels of an IV.
 
+# Building on the bootstrap
 
-# A few pitfalls to know about
-
-
-
+- Ensemble methods:
+  - [Bagging (bootstrap aggregation)](https://link.springer.com/article/10.1007/BF00058655)
+  - [Random forests](https://link.springer.com/article/10.1023/A:1010933404324)
