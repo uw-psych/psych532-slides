@@ -331,26 +331,83 @@
 </div>
 
 </section>
-<section id="challenges-of-doing-statistics-with-big-data" class="title-slide slide level1 center">
-<h1>Challenges of doing statistics with big data</h1>
+<section id="statistics-with-big-data" class="title-slide slide level1 center">
+<h1>Statistics with Big Data</h1>
+<ul>
+<li class="fragment">The curse of dimensionality.</li>
+<li class="fragment">The challenges of null hypothesis statistical testing.</li>
+<li class="fragment">Visualization as a solution.</li>
+<li class="fragment">Statistical solutions.
+<ul>
+<li class="fragment">Resampling.</li>
+<li class="fragment">The Jackknife.</li>
+<li class="fragment">The Bootstrap.</li>
+</ul></li>
+</ul>
+</section>
+
+<section>
+<section id="big-data" class="title-slide slide level1 center">
+<h1>Big data</h1>
 <p>Data can be “big” in two different ways:</p>
 <ul>
-<li class="fragment">Many rows in the table (large <span class="math inline">\(n\)</span>)</li>
-<li class="fragment">Many columns in the table (large <span class="math inline">\(p\)</span>)</li>
+<li class="fragment">Many rows in the table (large <span class="math inline">\(n\)</span>).</li>
+<li class="fragment">Many columns in the table (large <span class="math inline">\(p\)</span>).</li>
+<li class="fragment">Both of these present statistical challenges.</li>
+<li class="fragment">A lot of attention has been put on large <span class="math inline">\(n\)</span> as a solution to Reproducibility challenges.</li>
 </ul>
-<p>Both of these present statistical challenges</p>
+</section>
+<section class="slide level2">
+
+
+<img data-src="./images/witten_pvalues.png" class="r-stretch"></section></section>
+<section>
+<section id="whats-wrong-with-nhst" class="title-slide slide level1 center">
+<h1>What’s wrong with NHST?</h1>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(H_0\)</span> is wrong by definition</li>
+<li class="fragment">Rejection of the null hypothesis provides very little useful information</li>
+<li class="fragment">Type II errors are usually unquantified/unquantifiable.</li>
+<li class="fragment">Dichotomous with fundamentally arbitrary threshold.</li>
+<li class="fragment">Hard to use unless you restrict yourself to linear models.</li>
+</ol>
+</section>
+<section class="slide level2">
+
+
+<img data-src="./images/loftus_anova_fallacy.png" class="r-stretch"></section></section>
+<section id="the-bayesian-objection" class="title-slide slide level1 center">
+<h1>The Bayesian objection</h1>
 <ul>
-<li class="fragment">We’ll come back to the issue of large <span class="math inline">\(p\)</span></li>
+<li class="fragment"><span class="math inline">\(H_0\)</span> is rejected when.
+<ul>
+<li class="fragment"><span class="math inline">\(p(data | H_0) &lt; 0.05\)</span>.</li>
+</ul></li>
+<li class="fragment">But inference is often.
+<ul>
+<li class="fragment"><span class="math inline">\(p(H_0 | data) is small\)</span>.</li>
+</ul></li>
+<li class="fragment">Which may or may not be true depending on the prior of <span class="math inline">\(H_0\)</span>.</li>
+<li class="fragment">Making <span class="math inline">\(\alpha = 0.05\)</span> even more arbitrary.</li>
 </ul>
 </section>
 
-<section id="large-p-the-curse-of-dimensionality" class="title-slide slide level1 center">
-<h1>Large <span class="math inline">\(p\)</span>: the curse of dimensionality</h1>
-
+<section id="what-should-we-do" class="title-slide slide level1 center">
+<h1>What should we do?</h1>
+<ul>
+<li class="fragment">Plot the data.</li>
+<li class="fragment">Use confidence intervals.
+<ul>
+<li class="fragment">If you are using ‘mixed’ factorial designs, use <a href="https://link.springer.com/content/pdf/10.3758/BF03210951.pdf">“within subject CIs”</a></li>
+</ul></li>
+<li class="fragment">Use meta analysis.</li>
+<li class="fragment">Use an explicit model.</li>
+<li class="fragment">Or when pressed approximate your model with “planned comparisons”.</li>
+</ul>
 </section>
 
-<section id="challenges-of-doing-statistics-with-big-data-1" class="title-slide slide level1 center">
-<h1>Challenges of doing statistics with big data</h1>
+<section id="plotting-your-data" class="title-slide slide level1 center">
+<h1>Plotting your data</h1>
 
 </section>
 
@@ -489,6 +546,42 @@
 <li class="fragment"><a href="https://link.springer.com/article/10.1007/BF00058655">Bagging (bootstrap aggregation)</a></li>
 <li class="fragment"><a href="https://link.springer.com/article/10.1023/A:1010933404324">Random forests</a></li>
 </ul></li>
+</ul>
+</section>
+
+<section id="the-curse-of-dimensionality" class="title-slide slide level1 center">
+<h1>The curse of dimensionality</h1>
+<p>What about large <span class="math inline">\(p\)</span></p>
+<ul>
+<li class="fragment">There be dragons</li>
+</ul>
+</section>
+
+<section id="data-is-sparser-in-higher-dimensions" class="title-slide slide level1 center">
+<h1>Data is sparser in higher dimensions</h1>
+
+</section>
+
+<section id="the-distance-between-points-increases-rapidly" class="title-slide slide level1 center">
+<h1>The distance between points increases rapidly</h1>
+
+</section>
+
+<section id="when-p-n-multi-colinearity-exists" class="title-slide slide level1 center">
+<h1>When <span class="math inline">\(p\)</span> &gt; <span class="math inline">\(n\)</span> multi-colinearity exists</h1>
+
+</section>
+
+<section id="the-false-positive-rate-increases" class="title-slide slide level1 center">
+<h1>The false positive rate increases</h1>
+
+</section>
+
+<section id="machine-learning-to-the-rescue" class="title-slide slide level1 center">
+<h1>Machine learning to the rescue?</h1>
+<ul>
+<li class="fragment">Next time, we’ll look at some methods that are designed to deal with the curse of dimensionality</li>
+<li class="fragment">And may also help with some of the conceptual issues mentioned above.</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
