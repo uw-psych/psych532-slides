@@ -13,8 +13,6 @@ execute:
   freeze: auto
 ---
 
-
-
 # Challenges of doing statistics with big data
 
 Data can be "big" in two different ways:
@@ -24,9 +22,104 @@ Data can be "big" in two different ways:
 
 Both of these present statistical challenges
 
+- We'll come back to the issue of large $p$
+
 # Large $p$: the curse of dimensionality
 
+# Challenges of doing statistics with big data
 
+# Computing to the rescue
+
+# Resampling methods
+
+- Jackknife
+- Cross-validation
+- Permutation testing
+- Bootstrapping
+
+# The Jackknife
+
+- Originally invented by statistician Maurice Quenouille in the 40's.
+- Championed by Tukey, who also named it for its versatility and utility.
+- The mechanics:
+- Consider the statistic $\theta(X)$ calculated for data set $X$
+- Let the sample size of the data be $X$ be $n$
+- For i in 1...$n$
+  - Remove the $i^{th}$ observation
+  - Calculate $\theta_i = \theta(X_{-i})$ and store the value
+- The jacknife estimate of is:
+  - $\hat{\theta} = \frac{1}{n} \sum_{i}{\theta_i}$
+- The estimate of the standard error $SE(S)$ is:
+  - $SE_\theta = \sqrt{ \frac{n-1}{n} \sum_{i}{ (\hat{\theta} - \theta_i) ^2 }} $
+
+# The jackknife
+
+- The bias of the jackknife is smaller than the bias of $\theta$
+- Can also be used to estimate the bias of $\theta$:
+  - $\hat{B} =  \hat{\theta} - \theta$
+
+# Demo
+
+# Some limitations
+
+- Assumes data is IID
+- Assumes that $\theta$ is $ \sim \mathcal{N}(\mu,\,\sigma^{2}) $
+- Can fail badly with non-smooth estimators (e.g., median)
+- We'll talk about cross-validation next week.
+- And we may or may not come back to permutations later on.
+
+# The bootstrap
+
+Invented by Bradley Efron
+- See [interview](https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V) for the back-story.
+- Very general in its application
+- Consider a statistic $\theta(X)$
+- For i in $1...b$
+  - Sample $n$ samples _with replacement_: $X_b$
+  - In the pseudo-sample, calculate $\theta(X_b)$ and store the value
+- Standard error is the central 68% of the distribution.
+- The 95% confidence interval is in the interval between 2.5 and 97.5.
+
+# Why is the bootstrap so effective?
+
+- Alleviates distributional assumptions required with other methods.
+- Flexible to the statistic that is being interrogated
+- Supports model fitting.
+- And other complex procedures.
+- Efron argues that this is the natural procedure Fisher et al. would have preferred in the 20's if they had computers.
+
+# When Efron talks about computers
+
+::: {.fragment}
+
+They are talking about this:
+
+![](./images/computers_in_1983.png)
+
+:::
+
+# Demo
+
+# Building on the bootstrap
+
+- Ensemble methods:
+  - [Bagging (bootstrap aggregation)](https://link.springer.com/article/10.1007/BF00058655)
+  - [Random forests](https://link.springer.com/article/10.1023/A:1010933404324)
+
+
+# A few pitfalls of the bootstrap
+
+Based on ["What Teachers Should Know About the Bootstrap: Resampling in the Undergraduate Statistics Curriculum"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4784504/)
+by Tim Hesterberg.
+
+# A few pitfalls to know about
+
+- Inaccurate confidence intervals
+  - Particularly for small sample sizes
+  - In samples with less than
+
+
+# A few pitfalls to know about
 
 
 
