@@ -69,9 +69,37 @@ Data can be "big" in two different ways:
 
 # Plotting your data
 
+![](./images/loftus_plots.png)
 
+# Using confidence intervals to assess results
+
+![](./images/loftus_plot_with_error.png)
+
+# Using confidence intervals to assess results
+
+![](./images/loftus_comparison.png)
+
+# Using confidence intervals to assess results
+
+![](./images/loftus_lowry.png)
+
+# Explicit models
+
+- For example, the model that Dr. Loeb used.
+- Analogies from physics are useful, because physical law provides mathematical formulations of relationships.
+- Or "planned comparisons":
+  - Come up with a quantitative hypothesis
+  - Assign weights for each condition (to sum to 0)
+  - Compute the correlation between weights and conditional means.
 
 # Computing to the rescue
+
+::: {.fragment}
+
+![](./images/computers_in_1983.png)
+
+:::
+
 
 # Resampling methods
 
@@ -136,15 +164,6 @@ Invented by Bradley Efron
 - And other complex procedures.
 - Efron argues that this is the natural procedure Fisher et al. would have preferred in the 20's if they had computers.
 
-# When Efron talks about computers
-
-::: {.fragment}
-
-He's talking about this:
-
-![](./images/computers_in_1983.png)
-
-:::
 
 # Demo
 
@@ -173,13 +192,11 @@ by Tim Hesterberg.
 
 # The curse of dimensionality
 
-What about large $p$
+What about large $p$?
 
 - There be dragons
 
-
 # Data is sparser in higher dimensions
-
 
 # The distance between points increases rapidly
 

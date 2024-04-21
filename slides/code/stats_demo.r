@@ -5,6 +5,7 @@
 # and helped correct string formatting issues and debug broadcasting errors.
 
 library(boot)
+library(ggplot2)
 
 # Function to calculate the mean:
 calc_mean <- function(data, indices) {
@@ -93,36 +94,67 @@ cat(paste(
     "Jackknife bias: ", jackknife_bias[ii], "\n", sep = ""))
 
 
-# Next, bootstrapping
+######################################################################
+# Bootstrapping
 
 # Use the boot function to perform bootstrapping
 boot_results <- boot(data, calc_mean, R = 10000)
 
-# Calculate the standard error
-std_error <- sd(boot_results$t)
-print(paste("Standard Error of the Mean: ", std_error))
+sorted_boot_results <- sort(boot_results$t)
 
+# Plot sorted results with ggplot
+ggplot(data.frame(sorted_boot_results),
+    aes(x=seq_along(sorted_boot_results),
+    y = sorted_boot_results)) +
+    geom_line()
 
-# Define the non-linear model function
-nonlinear_model <- function(x, a, tau) {
-    1 - a * exp(x/tau)
+# Calculate standard error (central 68% of the distribution ):
+
+ci <- quantile(sorted_boot_results, c(0.16, 0.84))
+std_err <- 0.5 * (ci[2] - ci[1])
+cat(paste(
+    "Standard Error of the Mean: ", std_error, "\n"))
+
+# Calculate standard error (std of the distribution):
+std_err <- sd(sorted_boot_results)
+cat(paste(
+    "Standard Error of the Mean: ", std_error, "\n"))
+
+# Calculate 95% CI:
+ci <- quantile(sorted_boot_results, c(0.025, 0.975))
+
+cat(paste(
+    "95% Confidence Interval: ", ci[1], ci[2], "\n"))
+
+# Define a non-linear model function
+nonlinear_model <- function(x, alpha, beta, kappa) {
+    alpha - (alpha - beta) * exp(- x / kappa)
 }
+
 
 # Generate some sample data
 set.seed(123)
-x <- seq(-10, 10, length.out = 100)
-y <- nonlinear_model(x, 2, 3) + rnorm(length(x), mean = 0, sd = 2)
+x <- seq(1, 100, length.out = 100)
+y <- nonlinear_model(x, 100, 10, 20) + rnorm(length(x), mean = 0, sd = 2)
+
+ggplot(data.frame(x = x, y = y), aes(x = x, y = y)) +
+    geom_line()
 
 # Define the function to estimate the parameters using the non-linear model
 estimate_parameters <- function(data, indices) {
     x <- data$X[indices]
     y <- data$Y[indices]
-    fit <- nls(y ~ nonlinear_model(x, a, tau), start = list(a = 1, tau = 1))
+    fit <- nls(
+        y ~ nonlinear_model(x, alpha, beta, kappa),
+             start = list(
+                alpha = 100, beta = 10, kappa = 20))
     coef(fit)
 }
 
 # Perform bootstrap estimation
-boot_results <- boot(data = data.frame(X = x, Y = y), statistic = estimate_parameters, R = 1000)
+boot_results <- boot(
+    data = data.frame(X = x, Y = y),
+    statistic = estimate_parameters, R = 10000)
 
 # Get the bootstrap estimates of the parameters
 bootstrap_estimates <- boot_results$t
@@ -130,42 +162,8 @@ bootstrap_estimates <- boot_results$t
 # Calculate the variance of the bootstrap estimates
 variance_estimates <- apply(bootstrap_estimates, 2, var)
 
-# Print the variance estimates
-print(variance_estimates)
-
-# Plot the bootstrap distribution of the parameters with ggplot:
-library(ggplot2)
-bootstrap_df <- data.frame(a = bootstrap_estimates[,1], tau = bootstrap_estimates[,2])
-ggplot(bootstrap_df, aes(x = a)) +
-    geom_histogram(binwidth = 0.1, fill = "lightblue", color = "black") +
-    labs(title = "Bootstrap Distribution of Parameter a") +
-    theme_minimal()
-
-
-ggplot(bootstrap_df, aes(x = tau)) +
-    geom_histogram(binwidth = 0.1, fill = "lightblue", color = "black") +
-    labs(title = "Bootstrap Distribution of Parameter tau") +
-    theme_minimal()
-
 # Calculate the confidence intervals for the parameters
-conf_intervals <- boot.ci(boot_results[, 1], type = "bca", index = 1:2)
+conf_intervals <- boot.ci(boot_results,
+                          conf=0.95,
+                          type = "prec")
 print(conf_intervals)
-
-# Jacknife example
-# Generate a non-Gaussian distribution
-set.seed(123)
-data <- rexp(1000, rate = 0.5)
-
-
-# Initialize a vector to store the jackknife estimates
-jackknife_estimates <- numeric(length(data))
-
-
-# Calculate with bootstrap:
-# Define a function to calculate the mean
-calc_mean <- function(data, indices) {
-  return(mean(data[indices]))
-}
-
-# Use the boot function to perform bootstrapping
-boot_results <- boot(data, calc_mean, R = 1000)
