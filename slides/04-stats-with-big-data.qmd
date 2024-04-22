@@ -15,13 +15,13 @@ execute:
 
 # Statistics with Big Data
 
-- The curse of dimensionality.
-- The challenges of null hypothesis statistical testing.
-- Visualization as a solution.
-- Statistical solutions.
+- Some challenges in standard data analysis methods.
+- Some solutions.
+- Estimating error.
   - Resampling.
   - The Jackknife.
   - The Bootstrap.
+- The curse of dimensionality.
 
 # Big data
 
@@ -54,7 +54,7 @@ Data can be "big" in two different ways:
 - $H_0$ is rejected when.
   - $p(data | H_0) < 0.05$.
 - But inference is often.
-  - $p(H_0 | data) is small$.
+  - $p(H_0 | data)$ is small.
 - Which may or may not be true depending on the prior of $H_0$.
 - Making $\alpha = 0.05$ even more arbitrary.
 
@@ -92,11 +92,25 @@ Data can be "big" in two different ways:
   - Assign weights for each condition (to sum to 0)
   - Compute the correlation between weights and conditional means.
 
+# Some challenges
+
+::: {.small}
+
+- To calculate error bars, we need an estimate of the standard error of the statistic.
+- For simple cases, this is derived from the variance of the sampling distribution.
+  - What is the variance across multiple samples of size $n$.
+- For some statistics (and with some assumptions), we can calculate this.
+  - For example, the variance of the sampling distribution of the mean: $\frac{\sigma}{\sqrt(n)}$
+- For many statistics the sampling distribution is not well defined
+- But it can be computed empirically
+
+:::
+
 # Computing to the rescue
 
 ::: {.fragment}
 
-![](./images/computers_in_1983.png)
+![](./images/computers_in_1983.png){height=500}
 
 :::
 
@@ -110,9 +124,18 @@ Data can be "big" in two different ways:
 
 # The Jackknife
 
+::: {.small}
+
 - Originally invented by statistician Maurice Quenouille in the 40's.
 - Championed by Tukey, who also named it for its versatility and utility.
-- The mechanics:
+
+:::
+
+# The Jackknife
+
+::: {.small}
+
+- The algorithm:
 - Consider the statistic $\theta(X)$ calculated for data set $X$
 - Let the sample size of the data be $X$ be $n$
 - For i in 1...$n$
@@ -121,20 +144,27 @@ Data can be "big" in two different ways:
 - The jacknife estimate of is:
   - $\hat{\theta} = \frac{1}{n} \sum_{i}{\theta_i}$
 - The estimate of the standard error $SE(S)$ is:
-  - $SE_\theta = \sqrt{ \frac{n-1}{n} \sum_{i}{ (\hat{\theta} - \theta_i) ^2 }} $
+  - $SE_\theta = \sqrt{ \frac{n-1}{n} \sum_{i}{ (\hat{\theta} - \theta_i) ^2 }}$
+
+:::
 
 # The jackknife
+
+::: {.small}
 
 - The bias of the jackknife is smaller than the bias of $\theta$ (why?)
 - Can also be used to estimate the bias of $\theta$:
   - $\hat{B} =  \hat{\theta} - \theta$
+
+:::
+
 
 # Demo
 
 # Some limitations
 
 - Assumes data is IID
-- Assumes that $\theta$ is $ \sim \mathcal{N}(\mu,\,\sigma^{2}) $
+- Assumes that $\theta$ is $\sim \mathcal{N}(\mu,\,\sigma^{2})$
 - Can fail badly with non-smooth estimators (e.g., median)
 - We'll talk about cross-validation next week.
 - And we may or may not come back to permutations later on.
@@ -142,28 +172,40 @@ Data can be "big" in two different ways:
 # The bootstrap
 
 Invented by Bradley Efron
+
 - See [interview](https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V) for the back-story.
 - Very general in its application
+
+# The bootstrap
+
+::: {.small}
+
+- The algorithm:
 - Consider a statistic $\theta(X)$
 - For i in $1...b$
   - Sample $n$ samples _with replacement_: $X_b$
   - In the pseudo-sample, calculate $\theta(X_b)$ and store the value
 - Standard error is the sample standard deviation of $\theta$:
-  - $\sqrt(\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2})$
+  - $\sqrt{\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2}}$
 - Bias can be estimated as:
-  - $\theta{X} - \bar{theta}$ (why?)
+  - $\theta(X) - \bar{\theta}$ (why?)
 - The 95% confidence interval is in the interval between 2.5 and 97.5.
+
+:::
 
 # Why is the bootstrap so effective?
 
+::: {.small}
+
 - Alleviates distributional assumptions required with other methods.
+  - "non-parametric"
 - Flexible to the statistic that is being interrogated
 - Allows interrogating sampling procedures
   - For example, sample with and without stratification and compare SE.
 - Supports model fitting.
 - And other complex procedures.
 - Efron argues that this is the natural procedure Fisher et al. would have preferred in the 20's if they had computers.
-
+:::
 
 # Demo
 
@@ -173,6 +215,8 @@ Based on ["What Teachers Should Know About the Bootstrap: Resampling in the Unde
 by Tim Hesterberg.
 
 # A few pitfalls
+
+::: {.small}
 
 - Estimates of SE tend to bias downward in small samples.
   - By a factor of $\sqrt\frac{n-1}{n}$
@@ -184,11 +228,20 @@ by Tim Hesterberg.
 - In modeling: bootstrapping observations rather than bootstrapping the residuals
   - Residuals are preferable when considering a designed experiment with fixed levels of an IV.
 
+:::
+
 # Building on the bootstrap
 
 - Ensemble methods:
   - [Bagging (bootstrap aggregation)](https://link.springer.com/article/10.1007/BF00058655)
   - [Random forests](https://link.springer.com/article/10.1023/A:1010933404324)
+
+# Further reading
+
+- John Fox & Sanford Weisberg have an excellent [chapter](https://socialsciences.mcmaster.ca/jfox/Books/Companion-2E/appendix/Appendix-Bootstrapping.pdf) about "bootstrapping regression models" that has some excellent explanations and R code.
+
+- Another set of explanations in a Kulesa et al. [tutorial paper](https://www.nature.com/articles/nmeth.3414).
+
 
 # The curse of dimensionality
 
@@ -198,11 +251,54 @@ What about large $p$?
 
 # Data is sparser in higher dimensions
 
+![](./images/cod_sparse.png)
+
 # The distance between points increases rapidly
+
+![](./images/cod_distance.png)
+
+# Multi co-linearity
+
+- If the data is a $n$-by-$p$ matrix:
+
+::: {.fragment}
+
+$$
+\begin{bmatrix}
+X_{11} & X_{12} & \cdots & X_{1p} \\
+X_{21} & X_{22} & \cdots & X_{2p} \\
+\vdots & \vdots & \ddots & \vdots \\
+X_{n1} & X_{n2} & \cdots & X_{np}
+\end{bmatrix}
+$$
+:::
+
+::: {.fragment}
+
+every column is a linear combination of other columns.
+
+:::
 
 # When $p$ > $n$ multi-colinearity exists
 
+That is, there exists $\beta$ such that
+
+:::{.fragment}
+
+$X_{j} = \sum{\beta_j X_{-j}}$
+
+:::
+
+::: {.fragment}
+
+But multi-colinearity can exist even when $p$ < $n$ !
+
+:::
+
+
 # The false positive rate increases
+
+![](./images/code_false_positives.png)
 
 # Machine learning to the rescue?
 
