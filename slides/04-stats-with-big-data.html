@@ -334,15 +334,15 @@
 <section id="statistics-with-big-data" class="title-slide slide level1 center">
 <h1>Statistics with Big Data</h1>
 <ul>
-<li class="fragment">The curse of dimensionality.</li>
-<li class="fragment">The challenges of null hypothesis statistical testing.</li>
-<li class="fragment">Visualization as a solution.</li>
-<li class="fragment">Statistical solutions.
+<li class="fragment">Some challenges in standard data analysis methods.</li>
+<li class="fragment">Some solutions.</li>
+<li class="fragment">Estimating error.
 <ul>
 <li class="fragment">Resampling.</li>
 <li class="fragment">The Jackknife.</li>
 <li class="fragment">The Bootstrap.</li>
 </ul></li>
+<li class="fragment">The curse of dimensionality.</li>
 </ul>
 </section>
 
@@ -385,7 +385,7 @@
 </ul></li>
 <li class="fragment">But inference is often.
 <ul>
-<li class="fragment"><span class="math inline">\(p(H_0 | data) is small\)</span>.</li>
+<li class="fragment"><span class="math inline">\(p(H_0 | data)\)</span> is small.</li>
 </ul></li>
 <li class="fragment">Which may or may not be true depending on the prior of <span class="math inline">\(H_0\)</span>.</li>
 <li class="fragment">Making <span class="math inline">\(\alpha = 0.05\)</span> even more arbitrary.</li>
@@ -440,10 +440,29 @@
 </ul>
 </section>
 
+<section id="some-challenges" class="title-slide slide level1 center">
+<h1>Some challenges</h1>
+<div class="small">
+<ul>
+<li class="fragment">To calculate error bars, we need an estimate of the standard error of the statistic.</li>
+<li class="fragment">For simple cases, this is derived from the variance of the sampling distribution.
+<ul>
+<li class="fragment">What is the variance across multiple samples of size <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+<li class="fragment">For some statistics (and with some assumptions), we can calculate this.
+<ul>
+<li class="fragment">For example, the variance of the sampling distribution of the mean: <span class="math inline">\(\frac{\sigma}{\sqrt(n)}\)</span></li>
+</ul></li>
+<li class="fragment">For many statistics the sampling distribution is not well defined</li>
+<li class="fragment">But it can be computed empirically</li>
+</ul>
+</div>
+</section>
+
 <section id="computing-to-the-rescue" class="title-slide slide level1 center">
 <h1>Computing to the rescue</h1>
 <div class="fragment">
-<p><img data-src="./images/computers_in_1983.png"></p>
+<p><img data-src="./images/computers_in_1983.png" height="500"></p>
 </div>
 </section>
 
@@ -459,10 +478,19 @@
 
 <section id="the-jackknife" class="title-slide slide level1 center">
 <h1>The Jackknife</h1>
+<div class="small">
 <ul>
 <li class="fragment">Originally invented by statistician Maurice Quenouille in the 40’s.</li>
 <li class="fragment">Championed by Tukey, who also named it for its versatility and utility.</li>
-<li class="fragment">The mechanics:</li>
+</ul>
+</div>
+</section>
+
+<section id="the-jackknife-1" class="title-slide slide level1 center">
+<h1>The Jackknife</h1>
+<div class="small">
+<ul>
+<li class="fragment">The algorithm:</li>
 <li class="fragment">Consider the statistic <span class="math inline">\(\theta(X)\)</span> calculated for data set <span class="math inline">\(X\)</span></li>
 <li class="fragment">Let the sample size of the data be <span class="math inline">\(X\)</span> be <span class="math inline">\(n\)</span></li>
 <li class="fragment">For i in 1…<span class="math inline">\(n\)</span>
@@ -476,13 +504,15 @@
 </ul></li>
 <li class="fragment">The estimate of the standard error <span class="math inline">\(SE(S)\)</span> is:
 <ul>
-<li class="fragment">$SE_= $</li>
+<li class="fragment"><span class="math inline">\(SE_\theta = \sqrt{ \frac{n-1}{n} \sum_{i}{ (\hat{\theta} - \theta_i) ^2 }}\)</span></li>
 </ul></li>
 </ul>
+</div>
 </section>
 
-<section id="the-jackknife-1" class="title-slide slide level1 center">
+<section id="the-jackknife-2" class="title-slide slide level1 center">
 <h1>The jackknife</h1>
+<div class="small">
 <ul>
 <li class="fragment">The bias of the jackknife is smaller than the bias of <span class="math inline">\(\theta\)</span> (why?)</li>
 <li class="fragment">Can also be used to estimate the bias of <span class="math inline">\(\theta\)</span>:
@@ -490,6 +520,7 @@
 <li class="fragment"><span class="math inline">\(\hat{B} =  \hat{\theta} - \theta\)</span></li>
 </ul></li>
 </ul>
+</div>
 </section>
 
 <section id="demo" class="title-slide slide level1 center">
@@ -501,7 +532,7 @@
 <h1>Some limitations</h1>
 <ul>
 <li class="fragment">Assumes data is IID</li>
-<li class="fragment">Assumes that <span class="math inline">\(\theta\)</span> is $ (,,^{2}) $</li>
+<li class="fragment">Assumes that <span class="math inline">\(\theta\)</span> is <span class="math inline">\(\sim \mathcal{N}(\mu,\,\sigma^{2})\)</span></li>
 <li class="fragment">Can fail badly with non-smooth estimators (e.g., median)</li>
 <li class="fragment">We’ll talk about cross-validation next week.</li>
 <li class="fragment">And we may or may not come back to permutations later on.</li>
@@ -510,13 +541,45 @@
 
 <section id="the-bootstrap" class="title-slide slide level1 center">
 <h1>The bootstrap</h1>
-<p>Invented by Bradley Efron - See <a href="https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V">interview</a> for the back-story. - Very general in its application - Consider a statistic <span class="math inline">\(\theta(X)\)</span> - For i in <span class="math inline">\(1...b\)</span> - Sample <span class="math inline">\(n\)</span> samples <em>with replacement</em>: <span class="math inline">\(X_b\)</span> - In the pseudo-sample, calculate <span class="math inline">\(\theta(X_b)\)</span> and store the value - Standard error is the sample standard deviation of <span class="math inline">\(\theta\)</span>: - <span class="math inline">\(\sqrt(\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2})\)</span> - Bias can be estimated as: - <span class="math inline">\(\theta{X} - \bar{theta}\)</span> (why?) - The 95% confidence interval is in the interval between 2.5 and 97.5.</p>
+<p>Invented by Bradley Efron</p>
+<ul>
+<li class="fragment">See <a href="https://youtu.be/0tA3x64nCGY?si=u_9syHVAkwlcea9V">interview</a> for the back-story.</li>
+<li class="fragment">Very general in its application</li>
+</ul>
+</section>
+
+<section id="the-bootstrap-1" class="title-slide slide level1 center">
+<h1>The bootstrap</h1>
+<div class="small">
+<ul>
+<li class="fragment">The algorithm:</li>
+<li class="fragment">Consider a statistic <span class="math inline">\(\theta(X)\)</span></li>
+<li class="fragment">For i in <span class="math inline">\(1...b\)</span>
+<ul>
+<li class="fragment">Sample <span class="math inline">\(n\)</span> samples <em>with replacement</em>: <span class="math inline">\(X_b\)</span></li>
+<li class="fragment">In the pseudo-sample, calculate <span class="math inline">\(\theta(X_b)\)</span> and store the value</li>
+</ul></li>
+<li class="fragment">Standard error is the sample standard deviation of <span class="math inline">\(\theta\)</span>:
+<ul>
+<li class="fragment"><span class="math inline">\(\sqrt{\frac{1}{n-1} \sum_i{(\theta - \bar{\theta})^2}}\)</span></li>
+</ul></li>
+<li class="fragment">Bias can be estimated as:
+<ul>
+<li class="fragment"><span class="math inline">\(\theta(X) - \bar{\theta}\)</span> (why?)</li>
+</ul></li>
+<li class="fragment">The 95% confidence interval is in the interval between 2.5 and 97.5.</li>
+</ul>
+</div>
 </section>
 
 <section id="why-is-the-bootstrap-so-effective" class="title-slide slide level1 center">
 <h1>Why is the bootstrap so effective?</h1>
+<div class="small">
 <ul>
-<li class="fragment">Alleviates distributional assumptions required with other methods.</li>
+<li class="fragment">Alleviates distributional assumptions required with other methods.
+<ul>
+<li class="fragment">“non-parametric”</li>
+</ul></li>
 <li class="fragment">Flexible to the statistic that is being interrogated</li>
 <li class="fragment">Allows interrogating sampling procedures
 <ul>
@@ -526,6 +589,7 @@
 <li class="fragment">And other complex procedures.</li>
 <li class="fragment">Efron argues that this is the natural procedure Fisher et al.&nbsp;would have preferred in the 20’s if they had computers.</li>
 </ul>
+</div>
 </section>
 
 <section id="demo-1" class="title-slide slide level1 center">
@@ -540,6 +604,7 @@
 
 <section id="a-few-pitfalls" class="title-slide slide level1 center">
 <h1>A few pitfalls</h1>
+<div class="small">
 <ul>
 <li class="fragment">Estimates of SE tend to bias downward in small samples.
 <ul>
@@ -559,6 +624,7 @@
 <li class="fragment">Residuals are preferable when considering a designed experiment with fixed levels of an IV.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 
 <section id="building-on-the-bootstrap" class="title-slide slide level1 center">
@@ -569,6 +635,14 @@
 <li class="fragment"><a href="https://link.springer.com/article/10.1007/BF00058655">Bagging (bootstrap aggregation)</a></li>
 <li class="fragment"><a href="https://link.springer.com/article/10.1023/A:1010933404324">Random forests</a></li>
 </ul></li>
+</ul>
+</section>
+
+<section id="further-reading" class="title-slide slide level1 center">
+<h1>Further reading</h1>
+<ul>
+<li class="fragment"><p>John Fox &amp; Sanford Weisberg have an excellent <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion-2E/appendix/Appendix-Bootstrapping.pdf">chapter</a> about “bootstrapping regression models” that has some excellent explanations and R code.</p></li>
+<li class="fragment"><p>Another set of explanations in a Kulesa et al.&nbsp;<a href="https://www.nature.com/articles/nmeth.3414">tutorial paper</a>.</p></li>
 </ul>
 </section>
 
@@ -583,22 +657,48 @@
 <section id="data-is-sparser-in-higher-dimensions" class="title-slide slide level1 center">
 <h1>Data is sparser in higher dimensions</h1>
 
-</section>
+<img data-src="./images/cod_sparse.png" class="r-stretch"></section>
 
 <section id="the-distance-between-points-increases-rapidly" class="title-slide slide level1 center">
 <h1>The distance between points increases rapidly</h1>
 
+<img data-src="./images/cod_distance.png" class="r-stretch"></section>
+
+<section id="multi-co-linearity" class="title-slide slide level1 center">
+<h1>Multi co-linearity</h1>
+<ul>
+<li class="fragment">If the data is a <span class="math inline">\(n\)</span>-by-<span class="math inline">\(p\)</span> matrix:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{bmatrix}
+X_{11} &amp; X_{12} &amp; \cdots &amp; X_{1p} \\
+X_{21} &amp; X_{22} &amp; \cdots &amp; X_{2p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+X_{n1} &amp; X_{n2} &amp; \cdots &amp; X_{np}
+\end{bmatrix}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>every column is a linear combination of other columns.</p>
+</div>
 </section>
 
 <section id="when-p-n-multi-colinearity-exists" class="title-slide slide level1 center">
 <h1>When <span class="math inline">\(p\)</span> &gt; <span class="math inline">\(n\)</span> multi-colinearity exists</h1>
-
+<p>That is, there exists <span class="math inline">\(\beta\)</span> such that</p>
+<div class="fragment">
+<p><span class="math inline">\(X_{j} = \sum{\beta_j X_{-j}}\)</span></p>
+</div>
+<div class="fragment">
+<p>But multi-colinearity can exist even when <span class="math inline">\(p\)</span> &lt; <span class="math inline">\(n\)</span> !</p>
+</div>
 </section>
 
 <section id="the-false-positive-rate-increases" class="title-slide slide level1 center">
 <h1>The false positive rate increases</h1>
 
-</section>
+<img data-src="./images/code_false_positives.png" class="r-stretch"></section>
 
 <section id="machine-learning-to-the-rescue" class="title-slide slide level1 center">
 <h1>Machine learning to the rescue?</h1>
