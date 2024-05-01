@@ -366,6 +366,7 @@
 
 <section id="types-of-ml" class="title-slide slide level1 center">
 <h1>Types of ML</h1>
+<div class="small">
 <ul>
 <li class="fragment">Supervised:
 <ul>
@@ -381,6 +382,7 @@
 <li class="fragment">Determining sub-types of autism based on brain structure</li>
 </ul></li>
 </ul>
+</div>
 </section>
 
 <section id="supervised-learning" class="title-slide slide level1 center">
@@ -448,8 +450,82 @@
 <section id="quantifying-performance-2" class="title-slide slide level1 center">
 <h1>Quantifying performance</h1>
 
+<img data-src="images/ml_increase_features.png" class="r-stretch"></section>
 
-<img data-src="images/ml_increase_features.png" class="r-stretch"><div class="quarto-auto-generated-content">
+<section id="overfitting" class="title-slide slide level1 center">
+<h1>Overfitting</h1>
+
+<img data-src="images/ml_overfitting_1.png" class="r-stretch"></section>
+
+<section id="overfitting-1" class="title-slide slide level1 center">
+<h1>Overfitting</h1>
+
+<img data-src="images/ml_overfitting_2.png" class="r-stretch"></section>
+
+<section id="overfitting-2" class="title-slide slide level1 center">
+<h1>Overfitting</h1>
+
+<img data-src="images/ml_overfitting_3.png" class="r-stretch"></section>
+
+<section id="overfitting-3" class="title-slide slide level1 center">
+<h1>Overfitting</h1>
+
+<img data-src="images/ml_overfitting_4.png" class="r-stretch"></section>
+
+<section id="overfitting-4" class="title-slide slide level1 center">
+<h1>Overfitting</h1>
+
+<img data-src="images/ml_overfitting_5.png" class="r-stretch"></section>
+
+<section id="cross-validation" class="title-slide slide level1 center">
+<h1>Cross-validation</h1>
+
+<img data-src="images/ml_crossvalidation_1.png" class="r-stretch"></section>
+
+<section id="model-selection" class="title-slide slide level1 center">
+<h1>Model selection</h1>
+<div class="small">
+<ul>
+<li class="fragment">Consider: <span class="math inline">\(y = X\beta\)</span>
+<ul>
+<li class="fragment">Fitting: solve for <span class="math inline">\(\beta\)</span></li>
+<li class="fragment">OLS: minimize <span class="math inline">\(\sum{(y - \hat{y})^2}\)</span></li>
+<li class="fragment">But what about the setting where <span class="math inline">\(p\)</span> &gt;&gt; <span class="math inline">\(n\)</span>?</li>
+<li class="fragment">Or with correlated regressors?</li>
+<li class="fragment">The curse of dimensionality</li>
+</ul></li>
+<li class="fragment">Lasso: solve for beta
+<ul>
+<li class="fragment">Minimize: <span class="math inline">\(\sum{(y - \hat{y})^2} + \lambda \sum{|\beta|}\)</span></li>
+<li class="fragment">Where <span class="math inline">\(\lambda\)</span> is a <em>hyperparameter</em></li>
+</ul></li>
+</ul>
+</div>
+</section>
+
+<section id="the-bias-variance-tradeoff" class="title-slide slide level1 center">
+<h1>The bias variance tradeoff</h1>
+
+<img data-src="images/ml_bias_variance.png" class="r-stretch"><div class="fragment">
+<p>But how do we know <em>how much</em> bias?</p>
+</div>
+</section>
+
+<section id="lasso" class="title-slide slide level1 center">
+<h1>Lasso</h1>
+
+<img data-src="images/ml_lasso_paths.png" class="r-stretch"></section>
+
+<section id="cross-validation-for-model-selection" class="title-slide slide level1 center">
+<h1>Cross-validation for model selection</h1>
+
+<img data-src="images/ml_crossvalidation_2.png" class="r-stretch"></section>
+
+<section id="cross-validation-for-model-selection-1" class="title-slide slide level1 center">
+<h1>Cross-validation for model selection</h1>
+
+
+<img data-src="images/ml_model_selection.png" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
