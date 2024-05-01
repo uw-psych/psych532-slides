@@ -38,6 +38,7 @@ execute:
 
 # Types of ML
 
+::: {.small}
 - Supervised:
   - In this case, we have both $y$ and $X$ measured.
   - Predicting people's chronological age from structural brain differences.
@@ -47,6 +48,7 @@ execute:
   - In this case, we only have $X$ ($y$ may be a latent factor).
   - Example from Efron and Diaconis: determining the linear combination of grades that best distinguishes between students.
   - Determining sub-types of autism based on brain structure
+:::
 
 # Supervised learning
 
@@ -113,6 +115,68 @@ $R^2 = 0.2$
 ![](images/ml_increase_features.png)
 
 
+# Overfitting
 
+![](images/ml_overfitting_1.png)
+
+
+# Overfitting
+
+![](images/ml_overfitting_2.png)
+
+
+# Overfitting
+
+![](images/ml_overfitting_3.png)
+
+# Overfitting
+
+![](images/ml_overfitting_4.png)
+
+
+# Overfitting
+
+![](images/ml_overfitting_5.png)
+
+
+# Cross-validation
+
+![](images/ml_crossvalidation_1.png)
+
+
+# Model selection
+
+::: {.small}
+- Consider: $y = X\beta$
+  - Fitting: solve for $\beta$
+  - OLS: minimize $\sum{(y - \hat{y})^2}$
+  - But what about the setting where $p$ >> $n$?
+  - Or with correlated regressors?
+  - The curse of dimensionality
+- Lasso: solve for beta
+  - Minimize: $\sum{(y - \hat{y})^2} + \lambda \sum{|\beta|}$
+  - Where $\lambda$ is a _hyperparameter_
+:::
+
+# The bias variance tradeoff
+
+![](images/ml_bias_variance.png)
+
+::: {.fragment}
+But how do we know _how much_ bias?
+:::
+
+# Lasso
+
+![](images/ml_lasso_paths.png)
+
+# Cross-validation for model selection
+
+![](images/ml_crossvalidation_2.png)
+
+
+# Cross-validation for model selection
+
+![](images/ml_model_selection.png)
 
 
