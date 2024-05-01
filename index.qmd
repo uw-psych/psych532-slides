@@ -4,10 +4,10 @@ title: "Slides for Psych 532: Informatics in Psychology"
 
 - Introduction [\[slides\]](slides/01-introduction.html)
 - Reproducibility [\[slides\]](slides/02-reproducibility.html)
-- Working with Big Data [\[slides\]](slides/03-working-with-big-data.html)
-- Statistics with Big Data [\[slides\]](slides/04-stats-with-big-data.html)
+- Working with Big Data [\[slides\]](slides/03-working-with-big-data.html), [\[code\]](slides/code/tidy_demo.r)
+- Statistics with Big Data [\[slides\]](slides/04-stats-with-big-data.html), [\[code\]](slides/code/stats_demo.r)
 - High performance computing [\[slides\]](slides/05-hpc.html)
-- Machine learning [\[slides\]](slides/06-machine-learning.html)
+- Machine learning [\[slides\]](slides/06-machine-learning.html), [\[code\]](slides/code/ml_demo.r)
 - The FAIR principles [\[slides\]](slides/07-fair.html)
 - Data visualization with Big Data [\[slides\]](slides/08-viz.html)
 - Ethical considerations with Big Data [\[slides\]](slides/09-ethics.html)

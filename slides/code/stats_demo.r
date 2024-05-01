@@ -113,12 +113,12 @@ ggplot(data.frame(sorted_boot_results),
 ci <- quantile(sorted_boot_results, c(0.16, 0.84))
 std_err <- 0.5 * (ci[2] - ci[1])
 cat(paste(
-    "Standard Error of the Mean: ", std_error, "\n"))
+    "Standard Error of the Mean: ", std_err, "\n"))
 
 # Calculate standard error (std of the distribution):
 std_err <- sd(sorted_boot_results)
 cat(paste(
-    "Standard Error of the Mean: ", std_error, "\n"))
+    "Standard Error of the Mean: ", std_err, "\n"))
 
 # Calculate 95% CI:
 ci <- quantile(sorted_boot_results, c(0.025, 0.975))
