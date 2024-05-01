@@ -84,7 +84,9 @@ plot(cv, xlim = c(-4,4), mgp = 2:0)
 with(reg_cv, polygon(x = c(-10, 10, 10, -10, -10),
                      y = c(cvup[1], cvup[1], cvlo[1], cvlo[1], cvup[1]),
                      border = NA, col = rgb(0, 0, 0, .25)))
-abline(h = reg_CV$cvm[1], lty = 2, lwd = 2)
+
+abline(h = reg_cv$cvm[1], lty = 2, lwd = 2)
+
 legend("topleft", lty = 2, lwd = 2,
        legend = "Ordinary regression MSE", bty = "n")
 
