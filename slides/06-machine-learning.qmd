@@ -25,7 +25,7 @@ execute:
 
 # The setup
 
-::: {.tiny}
+::: {.small}
 - Let $X$ be a set of independent variables, $n$ rows by $p$ columns.
 - Let's assume it's tidy 😊
 - $y$ a dependent variable, $n$ entries
