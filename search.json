@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Slides for Psych 532: Informatics in Psychology",
     "section": "",
-    "text": "Introduction [slides]\nReproducibility [slides]\nWorking with Big Data [slides]\nStatistics with Big Data [slides]\nHigh performance computing [slides]\nMachine learning [slides]\nThe FAIR principles [slides]\nData visualization with Big Data [slides]\nEthical considerations with Big Data [slides]",
+    "text": "Introduction [slides]\nReproducibility [slides]\nWorking with Big Data [slides], [code]\nStatistics with Big Data [slides], [code]\nHigh performance computing [slides]\nMachine learning [slides], [code]\nThe FAIR principles [slides]\nData visualization with Big Data [slides]\nEthical considerations with Big Data [slides]",
     "crumbs": [
       "Home"
     ]

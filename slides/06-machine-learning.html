@@ -331,10 +331,125 @@
 </div>
 
 </section>
-<section class="slide level2">
+<section id="what-is-machine-learning-ml" class="title-slide slide level1 center">
+<h1>What is machine learning (ML)</h1>
+<ul>
+<li class="fragment">A field of science/engineering that builds systems that are capable of learning from experience.</li>
+<li class="fragment">Very broad and varied, but some common features:
+<ul>
+<li class="fragment">Algorithms that learn from data, rather than rule-based, hand-tuned systems.</li>
+<li class="fragment">Performance evaluation focused on well-defined quantitative targets.</li>
+</ul></li>
+<li class="fragment">A contrast with “traditional inference”:
+<ul>
+<li class="fragment">Focused on “prediction”.</li>
+<li class="fragment">Not as much on “explanation” or “understanding”.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="the-setup" class="title-slide slide level1 center">
+<h1>The setup</h1>
+<div class="tiny">
+<ul>
+<li class="fragment">Let <span class="math inline">\(X\)</span> be a set of independent variables, <span class="math inline">\(n\)</span> rows by <span class="math inline">\(p\)</span> columns.</li>
+<li class="fragment">Let’s assume it’s tidy 😊</li>
+<li class="fragment"><span class="math inline">\(y\)</span> a dependent variable, <span class="math inline">\(n\)</span> entries</li>
+<li class="fragment">So, in fairly general terms:</li>
+<li class="fragment"><span class="math inline">\(y = f_\theta(X)\)</span></li>
+<li class="fragment">Where <span class="math inline">\(f\)</span> is some function and <span class="math inline">\(\theta\)</span> are parameters of this function.</li>
+<li class="fragment">The goal of ML can be described as defining a procedure that identifies the values of <span class="math inline">\(\theta\)</span></li>
+<li class="fragment">In some cases, also need to learn the form of <span class="math inline">\(f\)</span></li>
+</ul>
+</div>
+</section>
+
+<section id="types-of-ml" class="title-slide slide level1 center">
+<h1>Types of ML</h1>
+<ul>
+<li class="fragment">Supervised:
+<ul>
+<li class="fragment">In this case, we have both <span class="math inline">\(y\)</span> and <span class="math inline">\(X\)</span> measured.</li>
+<li class="fragment">Predicting people’s chronological age from structural brain differences.</li>
+<li class="fragment">Determining whether an email is spam.</li>
+<li class="fragment">Predicting a person’s rating of a movie based on their rating of other movies.</li>
+</ul></li>
+<li class="fragment">Unsupervised:
+<ul>
+<li class="fragment">In this case, we only have <span class="math inline">\(X\)</span> (<span class="math inline">\(y\)</span> may be a latent factor).</li>
+<li class="fragment">Example from Efron and Diaconis: determining the linear combination of grades that best distinguishes between students.</li>
+<li class="fragment">Determining sub-types of autism based on brain structure</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="supervised-learning" class="title-slide slide level1 center">
+<h1>Supervised learning</h1>
+<ul>
+<li class="fragment">Regression: <span class="math inline">\(y\)</span> is a continuous variable</li>
+<li class="fragment">Classification: <span class="math inline">\(y\)</span> is a discrete variable</li>
+</ul>
+</section>
+
+<section id="regression" class="title-slide slide level1 center">
+<h1>Regression</h1>
+
+<img data-src="images/ml_regression_0.png" class="r-stretch"></section>
+
+<section id="regression-1" class="title-slide slide level1 center">
+<h1>Regression</h1>
+
+<img data-src="images/ml_regression_1.png" class="r-stretch"></section>
+
+<section id="classification" class="title-slide slide level1 center">
+<h1>Classification</h1>
+
+<img data-src="images/ml_classification_0.png" class="r-stretch"></section>
+
+<section id="unsupervised-learning" class="title-slide slide level1 center">
+<h1>Unsupervised learning</h1>
+<ul>
+<li class="fragment">Clustering</li>
+<li class="fragment">Dimensionality reduction</li>
+</ul>
+</section>
+
+<section id="clustering" class="title-slide slide level1 center">
+<h1>Clustering</h1>
+
+<img data-src="images/ml_clustering.png" class="r-stretch"></section>
+
+<section id="clustering-1" class="title-slide slide level1 center">
+<h1>Clustering</h1>
+
+<img data-src="images/ml_clustering1.png" class="r-stretch"></section>
+
+<section id="dimensionality-reduction" class="title-slide slide level1 center">
+<h1>Dimensionality reduction</h1>
+
+<img data-src="images/ml_dimensionality_reduction.png" class="r-stretch"></section>
+
+<section id="quantifying-performance" class="title-slide slide level1 center">
+<h1>Quantifying performance</h1>
+
+<img data-src="images/hcp_mmp1.png" class="r-stretch"></section>
+
+<section id="quantifying-performance-1" class="title-slide slide level1 center">
+<h1>Quantifying performance</h1>
+
+<img data-src="images/ml_age_regression.png" class="r-stretch"><div class="fragment">
+<p><span class="math inline">\(R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum{(y - \hat{y})^2}}{\sum{(y - \bar{y})^2}}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(R^2 = 0.2\)</span></p>
+</div>
+</section>
+
+<section id="quantifying-performance-2" class="title-slide slide level1 center">
+<h1>Quantifying performance</h1>
 
 
-<div class="quarto-auto-generated-content">
+<img data-src="images/ml_increase_features.png" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
