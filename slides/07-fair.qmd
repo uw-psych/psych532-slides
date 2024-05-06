@@ -14,4 +14,100 @@ execute:
 ---
 
 
+# What constitutes "Good data management"?
+
+- Let's assume that we all agree that data needs to be shared as part of the scientific process
+- What does that _actually_ mean?
+
+# FAIR
+
+- Findable
+- Accessible
+- Interoperable
+- Reusable
+
+# Findable:
+
+- F1. (meta)data are assigned a globally unique and persistent identifier
+- F2. data are described with rich metadata (defined by R1 below)
+- F3. metadata clearly and explicitly include the identifier of the data it describes
+- F4. (meta)data are registered or indexed in a searchable resource
+
+# Globally unique and persistent identifiers
+
+::: {small}
+- Needed to make sure that you know what is described.
+- DOI: Digital Object Identifier
+  - Strong guarantees of persistence and uniqueness
+  - You can get a DOI for your data!
+  - Zenodo
+  - OSF
+- Another kind of globally unique and persistent identifier: ORCID
+- Searchability is still a very hard problem
+:::
+
+# Accessible
+
+- A1. (meta)data are retrievable by their identifier using a standardized communications protocol
+  - A1.1 the protocol is open, free, and universally implementable
+  - A1.2 the protocol allows for an authentication and authorization procedure, where necessary
+- A2. metadata are accessible, even when the data are no longer available
+
+# Accessible ≠ open
+
+- For example, some personal data cannot be openly shared.
+
+# Interoperable
+
+- I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.
+- I2. (meta)data use vocabularies that follow FAIR principles
+- I3. (meta)data include qualified references to other (meta)data
+
+# Example: JSON-LD
+
+A language for linking between different pieces of data
+
+```json
+{
+  "@context": "https://json-ld.org/contexts/person.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+```
+
+# Reusable
+
+- R1. meta(data) are richly described with a plurality of accurate and relevant attributes
+  - R1.1. (meta)data are released with a clear and accessible data usage license
+  - R1.2. (meta)data are associated with detailed provenance
+  - R1.3. (meta)data meet domain-relevant community standards
+
+# Reusable
+
+{{< video https://youtu.be/N2zK3sAtr-4?si=gvGwlHprrU3elA6W width="600" height="400">}}
+
+Data Sharing and Management Snafu in 3 Short Acts / NYU Health Sciences Library
+
+
+# A few interesting follow-ups to FAIR
+
+- The FAIR principles for software
+- The CARE principles for Indigenous Data Governance
+
+
+# FAIR for software
+
+[Barker et al., 2022](https://www.nature.com/articles/s41597-022-01710-x)
+
+- Different versions of the software are assigned distinct identifiers
+- Software licenses are distinct from data use licenses.
+
+# The CARE principles for indigenous data governance
+
+- Collective benefit
+- Authority to control
+- Responsibility
+- Ethics
 
