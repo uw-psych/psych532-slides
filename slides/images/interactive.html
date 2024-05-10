@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.28.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.18.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.24.0"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "hconcat": [
+    {
+      "mark": {"type": "point"},
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_86",
+            "field": "Origin",
+            "type": "nominal"
+          },
+          "value": "lightgray"
+        },
+        "x": {"field": "Horsepower", "type": "quantitative"},
+        "y": {"field": "Miles_per_Gallon", "type": "quantitative"}
+      },
+      "height": 250,
+      "name": "view_86",
+      "width": 250
+    },
+    {
+      "mark": {"type": "point"},
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_86",
+            "field": "Origin",
+            "type": "nominal"
+          },
+          "value": "lightgray"
+        },
+        "x": {"field": "Acceleration", "type": "quantitative"},
+        "y": {"field": "Miles_per_Gallon", "type": "quantitative"}
+      },
+      "height": 250,
+      "name": "view_87",
+      "width": 250
+    }
+  ],
+  "data": {
+    "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"
+  },
+  "params": [
+    {
+      "name": "param_86",
+      "select": {"type": "interval"},
+      "views": ["view_86", "view_87"]
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json"
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>

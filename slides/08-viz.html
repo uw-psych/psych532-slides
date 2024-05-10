@@ -331,8 +331,189 @@
 </div>
 
 </section>
-<section class="slide level2">
+<section id="why-visualize" class="title-slide slide level1 center">
+<h1>Why visualize?</h1>
+<ul>
+<li class="fragment">We’ve already seen that visualizations are an important data analysis tool (Loftus)</li>
+<li class="fragment">Visualization for analysis vs.&nbsp;visualization for communication:
+<ul>
+<li class="fragment">“Reveal relationships in large datasets…”</li>
+<li class="fragment">“…and communicate information to a broad audience”</li>
+<li class="fragment">Not necessarily the same thing!</li>
+</ul></li>
+</ul>
+</section>
 
+<section id="reveal-relationships" class="title-slide slide level1 center">
+<h1>Reveal relationships</h1>
+<div class="fragment">
+<p>… in large datasets?</p>
+<p><img data-src="./images/anscombe.png"></p>
+</div>
+</section>
+
+<section id="a-few-basic-items" class="title-slide slide level1 center">
+<h1>A few basic items</h1>
+<p>From Allen et al.&nbsp;(2012)</p>
+<ul>
+<li class="fragment">Are the axes labeled?</li>
+<li class="fragment">Are scales and units indicated?</li>
+<li class="fragment">Is there a measure of uncertainty (e.g., error bars)?</li>
+<li class="fragment">Is the type of uncertainty (e.g., SEM, CI, …) indicated?</li>
+</ul>
+</section>
+
+<section id="show-more-hide-less" class="title-slide slide level1 center">
+<h1>Show more, hide less</h1>
+<ul>
+<li class="fragment">From bar plots …</li>
+<li class="fragment">… to box plots …</li>
+<li class="fragment">… to swarm plots, violin plots, …</li>
+</ul>
+</section>
+
+<section id="show-more-hide-less-1" class="title-slide slide level1 center">
+<h1>Show more, hide less</h1>
+
+<img data-src="./images/allen2.png" class="r-stretch"></section>
+
+<section id="raincloud-plots" class="title-slide slide level1 center">
+<h1>…raincloud plots</h1>
+
+<img data-src="./images/raincloudplot.png" class="r-stretch"><p>See https://github.com/jorvlan/raincloudplots</p>
+</section>
+
+<section id="even-with-repeated-measures" class="title-slide slide level1 center">
+<h1>Even with repeated measures</h1>
+
+<img data-src="./images/raincloudplot_repmes.png" class="r-stretch"><p>See https://github.com/jorvlan/raincloudplots</p>
+</section>
+
+<section id="increasing-the-information-density" class="title-slide slide level1 center">
+<h1>Increasing the information density</h1>
+
+<img data-src="./images/allen3_detail.png" class="r-stretch"></section>
+
+<section id="using-color" class="title-slide slide level1 center">
+<h1>Using color</h1>
+<ul>
+<li class="fragment">Think about accessibility
+<ul>
+<li class="fragment">About 5-8% of males + 0.5-1% of females cannot distinguish certain shades of red and green</li>
+</ul></li>
+<li class="fragment">Color is itself multidimensional
+<ul>
+<li class="fragment">Can use hue and saturation/transparency independently</li>
+</ul></li>
+<li class="fragment">Using the right colormap matters
+<ul>
+<li class="fragment">Color maps: each number maps to a color</li>
+<li class="fragment">Avoid colormaps that are not perceptually uniform</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="perceptually-uniform-colormaps" class="title-slide slide level1 center">
+<h1>Perceptually uniform colormaps</h1>
+
+<img data-src="./images/jet.png" class="r-stretch"><div class="small">
+<p>See <a href="https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/">https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/</a></p>
+</div>
+</section>
+
+<section id="perceptually-uniform-colormaps-1" class="title-slide slide level1 center">
+<h1>Perceptually uniform colormaps</h1>
+
+<img data-src="./images/jet_grayified.png" class="r-stretch"><div class="small">
+<p>See <a href="https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/">https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/</a></p>
+</div>
+</section>
+
+<section id="perceptually-uniform-colormaps-2" class="title-slide slide level1 center">
+<h1>Perceptually uniform colormaps</h1>
+
+<img data-src="./images/jet_with_gray.png" class="r-stretch"><div class="small">
+<p>See <a href="https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/">https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/</a></p>
+</div>
+</section>
+
+<section id="solutions" class="title-slide slide level1 center">
+<h1>Solutions?</h1>
+<ul>
+<li class="fragment">Use grayscale</li>
+<li class="fragment">Use a colormap that is optimized for perceptual uniformity</li>
+<li class="fragment"><a href="https://www.youtube.com/watch?v=xAoljeRJ3lU">Viridis</a></li>
+</ul>
+</section>
+
+<section id="viridis" class="title-slide slide level1 center">
+<h1>Viridis</h1>
+
+<img data-src="./images/viridis.png" class="r-stretch"></section>
+
+<section id="viridis-1" class="title-slide slide level1 center">
+<h1>Viridis</h1>
+
+<img data-src="./images/viridis_grayified.png" class="r-stretch"></section>
+
+<section id="if-you-need-a-divergent-colormap" class="title-slide slide level1 center">
+<h1>If you need a divergent colormap</h1>
+
+<img data-src="./images/RdBu.png" class="r-stretch"></section>
+
+<section id="or-a-circular-colormap" class="title-slide slide level1 center">
+<h1>Or a circular colormap</h1>
+
+<img data-src="./images/twilight.png" class="r-stretch"></section>
+
+<section id="aligning-graphics-and-concepts" class="title-slide slide level1 center">
+<h1>Aligning graphics and concepts</h1>
+<p>Based on Goldstone et al.&nbsp;(2015) ::: {.small} - Continuous dimensions with continuously perceived graphical attributes: - Saturation - Size - Position along an axis - Categorical dimensions with categorically perceived graphical attributes: - Hue - Shape - If using time (e.g., in animation) match that with time in the experiment. - If that’s a relevant dimension. :::</p>
+</section>
+
+<section id="so-have-we-solved-the-curse-of-dimensionality" class="title-slide slide level1 center">
+<h1>So, have we solved the curse of dimensionality?</h1>
+
+</section>
+
+<section id="using-animations" class="title-slide slide level1 center">
+<h1>Using animations</h1>
+<p>Can help with visualization of complex three-dimensional structures</p>
+<div class="fragment">
+<p><img data-src="./images/arc4.gif" height="500"></p>
+</div>
+<div class="fragment">
+<p>Or events unfolding over time (we’ll see an example below)</p>
+</div>
+</section>
+
+<section id="using-interactions" class="title-slide slide level1 center">
+<h1>Using interactions</h1>
+<div class="small">
+<p>Provides a way to explore the data or link between different attributes</p>
+</div>
+<div class="fragment">
+<iframe src="./images/interactive.html" width="100%" height="500" frameborder="0">
+</iframe>
+</div>
+</section>
+
+<section id="dimensionality-reduction-approaches" class="title-slide slide level1 center">
+<h1>Dimensionality reduction approaches</h1>
+<div class="{fragment}">
+<blockquote>
+<p>“To deal with hyper-planes in a 14-dimensional space, visualize a 3D space and say ‘fourteen’ very loudly. Everyone does it.” - Geoff Hinton</p>
+</blockquote>
+</div>
+<ul>
+<li class="fragment">Linear dimensionality reduction: PCA</li>
+<li class="fragment">Non-linear approaches:
+<ul>
+<li class="fragment">t-SNE</li>
+<li class="fragment">UMAP</li>
+<li class="fragment">…</li>
+</ul></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
