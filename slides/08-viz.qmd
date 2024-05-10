@@ -12,3 +12,166 @@ execute:
   echo: true
   freeze: auto
 ---
+
+# Why visualize?
+
+- We've already seen that visualizations are an important data analysis tool (Loftus)
+- Visualization for analysis vs. visualization for communication:
+  - "Reveal relationships in large datasets..."
+  - "...and communicate information to a broad audience"
+  - Not necessarily the same thing!
+
+# Reveal relationships
+
+:::{.fragment}
+... in large datasets?
+
+![](./images/anscombe.png)
+:::
+
+# A few basic items
+
+From Allen et al. (2012)
+
+- Are the axes labeled?
+- Are scales and units indicated?
+- Is there a measure of uncertainty (e.g., error bars)?
+- Is the type of uncertainty (e.g., SEM, CI, ...) indicated?
+
+
+# Show more, hide less
+
+- From bar plots ...
+- ... to box plots ...
+- ... to swarm plots, violin plots, ...
+
+# Show more, hide less
+
+![](./images/allen2.png)
+
+# ...raincloud plots
+
+![](./images/raincloudplot.png)
+
+See https://github.com/jorvlan/raincloudplots
+
+# Even with repeated measures
+
+![](./images/raincloudplot_repmes.png)
+
+See https://github.com/jorvlan/raincloudplots
+
+# Increasing the information density
+
+![](./images/allen3_detail.png)
+
+# Using color
+
+- Think about accessibility
+  - About 5-8% of males + 0.5-1% of females cannot distinguish certain shades of red and green
+- Color is itself multidimensional
+  - Can use hue and saturation/transparency independently
+- Using the right colormap matters
+  - Color maps: each number maps to a color
+  - Avoid colormaps that are not perceptually uniform
+
+# Perceptually uniform colormaps
+
+![](./images/jet.png)
+
+::: {.small}
+See [https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/](https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/)
+:::
+
+# Perceptually uniform colormaps
+
+![](./images/jet_grayified.png)
+
+
+::: {.small}
+See [https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/](https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/)
+:::
+
+# Perceptually uniform colormaps
+
+![](./images/jet_with_gray.png)
+
+::: {.small}
+See [https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/](https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/)
+:::
+
+# Solutions?
+
+- Use grayscale
+- Use a colormap that is optimized for perceptual uniformity
+- [Viridis](https://www.youtube.com/watch?v=xAoljeRJ3lU)
+
+# Viridis
+
+![](./images/viridis.png)
+
+# Viridis
+
+![](./images/viridis_grayified.png)
+
+# If you need a divergent colormap
+
+![](./images/RdBu.png)
+
+# Or a circular colormap
+
+![](./images/twilight.png)
+
+# Aligning graphics and concepts
+
+Based on Goldstone et al. (2015)
+::: {.small}
+- Continuous dimensions with continuously perceived graphical attributes:
+  - Saturation
+  - Size
+  - Position along an axis
+- Categorical dimensions with categorically perceived graphical attributes:
+  - Hue
+  - Shape
+- If using time (e.g., in animation) match that with time in the experiment.
+  - If that's a relevant dimension.
+:::
+
+# So, have we solved the curse of dimensionality?
+
+# Using animations
+
+Can help with visualization of complex three-dimensional structures
+
+:::{.fragment}
+![](./images/arc4.gif){height=500}
+:::
+
+:::{.fragment}
+Or events unfolding over time (we'll see an example below)
+:::
+
+# Using interactions
+
+:::{.small}
+Provides a way to explore the data or link between different attributes
+:::
+
+:::{.fragment}
+<iframe src="./images/interactive.html" width="100%" height=500 frameborder="0"></iframe>
+:::
+
+# Dimensionality reduction approaches
+
+::: {fragment}
+> "To deal with hyper-planes in a 14-dimensional space, visualize a 3D space and say 'fourteen' very loudly. Everyone does it." - Geoff Hinton
+:::
+
+- Linear dimensionality reduction: PCA
+- Non-linear approaches:
+  - t-SNE
+  - UMAP
+  - ...
+
+
+
