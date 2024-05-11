@@ -74,21 +74,28 @@ library(plotly)
 library(stats)
 data(iris)
 
-X <- subset(iris, select = -c(Species))
-axis = list(showline=FALSE,
-            zeroline=FALSE,
-            gridcolor="#ffff",
-            ticklen=4)
+data <- subset(iris, select = -c(Species))
+axis <- list(showline = FALSE,
+            zeroline = FALSE,
+            gridcolor = "#ffff",
+            ticklen = 4)
 fig <- iris %>%
   plot_ly()  %>%
   add_trace(
     type = "splom",
     dimensions = list(
-      list(label = "sepal_width",values=~Sepal.Width),
-      list(label = "sepal_length",values=~Sepal.Length),
-      list(label ="petal_width",values=~Petal.Width),
-      list(label = "petal_length",values=~Petal.Length)),
-    color = ~Species, colors = c("#636EFA","#EF553B","#00CC96")
+      list(label = "sepal_width",
+           values = ~Sepal.Width),
+      list(label = "sepal_length",
+           values = ~Sepal.Length),
+      list(label = "petal_width",
+           values = ~Petal.Width),
+      list(label = "petal_length",
+           values = ~Petal.Length)),
+    color = ~Species,
+    colors = c("#636EFA",
+               "#EF553B",
+               "#00CC96")
   )
 fig <- fig %>%
   layout(
@@ -96,10 +103,16 @@ fig <- fig %>%
     hovermode = "closest",
     dragmode = "select",
     plot_bgcolor = "rgba(240, 240, 240, 0.95)",
-    xaxis = list(domain = NULL, showline = F,
-    zeroline = FALSE, gridcolor = "#ffff", ticklen = 4),
-    yaxis = list(domain = NULL, showline = F,
-    zeroline = FALSE, gridcolor = "#ffff", ticklen = 4),
+    xaxis = list(domain = NULL,
+                 showline = FALSE,
+                 zeroline = FALSE,
+                 gridcolor = "#ffff",
+                 ticklen = 4),
+    yaxis = list(domain = NULL,
+                 showline = FALSE,
+                 zeroline = FALSE,
+                 gridcolor = "#ffff",
+                 ticklen = 4),
     xaxis2 = axis,
     xaxis3 = axis,
     xaxis4 = axis,
@@ -109,13 +122,17 @@ fig <- fig %>%
   )
 fig
 
-pca <- prcomp(X)
-pca <- data.frame(PC1=pca$x[, 1],
-                  PC2=pca$x[, 2],
-                  Species=iris$Species)
+pca <- prcomp(data)
+pca <- data.frame(PC1 = pca$x[, 1],
+                  PC2 = pca$x[, 2],
+                  Species = iris$Species)
 
-fig <-  plot_ly(data = pca , x = ~PC1 , y = ~PC2 , type = "scatter",
-                mode = "markers", split = ~iris$Species)
+fig <-  plot_ly(data = pca,
+                x = PC1,
+                y = PC2,
+                type = "scatter",
+                mode = "markers",
+                split = ~iris$Species)
 
 fig <- fig %>%
   layout(
