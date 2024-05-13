@@ -9,5 +9,6 @@ title: "Slides for Psych 532: Informatics in Psychology"
 - High performance computing [\[slides\]](slides/05-hpc.html)
 - Machine learning [\[slides\]](slides/06-machine-learning.html), [\[code\]](slides/code/ml_demo.r)
 - The FAIR principles [\[slides\]](slides/07-fair.html)
-- Data visualization with Big Data [\[slides\]](slides/08-viz.html)
+- Data visualization with Big Data [\[slides\]](slides/08-viz.html) [\[code\]](slides/code/viz_demo.r)
+- The FAIR principles [\[slides\]](slides/07-fair.html)
 - Ethical considerations with Big Data [\[slides\]](slides/09-ethics.html)
