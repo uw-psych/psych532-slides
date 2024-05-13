@@ -74,7 +74,7 @@ library(plotly)
 library(stats)
 data(iris)
 
-data <- subset(iris, select = -c(Species))
+X <- subset(iris, select = -c(Species))
 axis <- list(showline = FALSE,
             zeroline = FALSE,
             gridcolor = "#ffff",
@@ -122,14 +122,14 @@ fig <- fig %>%
   )
 fig
 
-pca <- prcomp(data)
+pca <- prcomp(X)
 pca <- data.frame(PC1 = pca$x[, 1],
                   PC2 = pca$x[, 2],
                   Species = iris$Species)
 
 fig <-  plot_ly(data = pca,
-                x = PC1,
-                y = PC2,
+                x = ~PC1,
+                y = ~PC2,
                 type = "scatter",
                 mode = "markers",
                 split = ~iris$Species)
@@ -151,6 +151,29 @@ set.seed(0)
 tsne <- tsne(features, initial_dims = 2)
 tsne <- data.frame(tsne)
 pdb <- cbind(tsne, iris$Species)
+
+options(warn = -1)
+fig <-  plot_ly(data = pdb, x =  ~X1, y = ~X2,
+                type = "scatter", mode = "markers", split = ~iris$Species)
+
+fig <- fig %>%
+  layout(
+    plot_bgcolor = "#e5ecf6"
+  )
+
+fig
+
+
+if (!require(umap)) {
+    install.packages("umap")
+}
+
+library(umap)
+features <- subset(iris, select = -c(Species))
+
+set.seed(0)
+umap <- umap(features, initial_dims = 2)
+pdb <- data.frame(umap$layout, iris$Species)
 
 options(warn = -1)
 fig <-  plot_ly(data = pdb, x =  ~X1, y = ~X2,

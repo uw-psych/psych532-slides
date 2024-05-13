@@ -158,8 +158,13 @@ Provides a way to explore the data or link between different attributes
 :::
 
 :::{.fragment}
-<iframe src="./images/interactive.html" width="100%" height=500 frameborder="0"></iframe>
+<iframe src="./images/interactive.html" width="100%" height=1000 frameborder="0"></iframe>
 :::
+
+# Using interactions
+
+<iframe src="./images/sub-NDARAA948VFH_ses-HBNsiteRU_acq-64dir_space-T1w_desc-preproc_dwi_space-RASMM_model-CSD_desc-prob-afq_viz.html" width="100%" height=500 frameborder="0"></iframe>
+
 
 # Dimensionality reduction approaches
 
@@ -173,5 +178,24 @@ Provides a way to explore the data or link between different attributes
   - UMAP
   - ...
 
+# Demo
+
+# Where does t-sne (and similar) shine?
+
+![](./images/mnist.webp)
+
+# Where does t-sne (and similar) shine?
+![](./images/tsne_nist.png){height=500}
+
+# Where does t-sne (and similar) shine?
+
+![](./images/tsne_fashon_mnist.png){height=500}
+
+
+# Combining dimensionality reduction and animation
+
+![](./images/hypertools.gif){height=400}
+
+[https://hypertools.readthedocs.io/en/latest/](https://hypertools.readthedocs.io/en/latest/)
 
 
