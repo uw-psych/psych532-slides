@@ -13,5 +13,135 @@ execute:
   freeze: auto
 ---
 
+# Questions for today
+
+- Do data-intensive methods change our ethical considerations?
+- What new ethical considerations arise when conducting data-intensive research?
+- What are some new safeguards we might consider?
+
+# Foundations of ethics in biomedical research
+
+::: {.small}
+
+- Nuremberg trials and the Nuremberg code (1947)
+  - Basic principles: continual informed consent, risk minimization
+- Declaration of Helsinki (1964)
+  - World Medical Association
+  - Serves as the basis for the system of IRB
+- Belmont Report (1979)
+  - Respect for persons
+  - Beneficience
+  - Justice
+
+:::
+
+---
+
+![](./images/irb.png)
+
+# Big data or naturally occurring datasets (BONDS)
+
+- Collected not for research purposes
+- E.g., data from social media
+
+
+# Examples
+
+- Decision-making quantified based on search engine data (Moat et al.)
+- Decision-making in used car purchases (Pope)
+- Corpus analysis of language demonstrating correlation of phonetic and semantic distances (Christiansen and Monaghan)
+- Theories of learning tested in educational technology (Koedinger et al.)
+
+::: {.tiny}
+[Goldstone and Lupyan, 2016, Topics in Cognitive Science](https://onlinelibrary.wiley.com/toc/17568765/2016/8/3)
+:::
+
+# Some worrisome signs
+
+- Scraping of data from OK Cupid (2016-2018)
+  - Release of the data as an open dataset
+  - Use of the data to classify sexual orientation
+- Human experimentation at scale
+  - Facebook emotional contagion study (2014)
+- The Menlo report (2012): US DHS
+
+
+# Recasting the Belmont principles
+
+- Respect
+  - Informed consent in digital services is very problematic
+- Beneficience
+  - Minimizing the data that is collected
+  - Indirect harms
+- Justice
+  - Representation
+  - Algorithmic justice
+
+# Identifiability
+
+- Latanya Sweeney : ["Only You, Your Doctor, and Many Others May Know"](https://techscience.org/a/2015092903/)
+- Some data is deidentified on its own
+- But when combined with other available data becomes identifiable
+- Was able to find the medical records of the MA governor
+- Cross-referenced age, gender, zip code between:
+  - Publicly available voter rolls
+  - Newly released "anonymized" health records of state employees.
+
+
+# Algorithmic justice
+
+COMPAS algorithm for sentencing
+
+![](./images/propublica1.png)
+
+# Algorithmic justice
+
+COMPAS algorithm for sentencing
+
+![](./images/propublica2.png)
+
+
+# "Weapons of Math Destruction"
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {.small}
+
+- Methods that are:
+  - Opaque
+  - Unregulated
+  - Difficult to contest
+  - Scalable
+  - Consequential
+
+:::
+
+:::
+
+::: {.column width="40%"}
+![](./images/Weapons_of_Math_Destruction.jpg)
+:::
+
+::::
+
+
+::: {.tiny}
+O'Neil, 2016
+
+:::
+
+
+# Fairness Accountability and Transparency (FAccT)
+
+
+
+
+
+
+
+
+
 
 

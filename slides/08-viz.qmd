@@ -125,6 +125,7 @@ See [https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/](https:
 # Aligning graphics and concepts
 
 Based on Goldstone et al. (2015)
+
 ::: {.small}
 - Continuous dimensions with continuously perceived graphical attributes:
   - Saturation
