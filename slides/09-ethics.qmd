@@ -75,12 +75,12 @@ execute:
   - Minimizing the data that is collected
   - Indirect harms
 - Justice
-  - Identifiability
+  - Privacy
   - Representation
   - Algorithmic justice
 :::
 
-# Identifiability
+# Privacy
 
 ::: {.small}
 
@@ -94,7 +94,7 @@ execute:
 
 :::
 
-# Identifiability
+# Privacy
 
 Differential privacy
 
@@ -103,7 +103,7 @@ Differential privacy
 - While maintaining statistical properties across entries
 
 
-# Identifiability
+# Privacy
 
 :::: {.columns}
 
@@ -112,6 +112,7 @@ Differential privacy
 ::: {.small}
 - Clearview AI
 - Facial recognition at population scale
+- The death of privacy?
 :::
 
 :::
