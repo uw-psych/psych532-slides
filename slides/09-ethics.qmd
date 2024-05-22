@@ -58,6 +58,7 @@ execute:
 
 # Some worrisome signs
 
+- Social media, in general
 - Scraping of data from OK Cupid (2016-2018)
   - Release of the data as an open dataset
   - Use of the data to classify sexual orientation
@@ -65,19 +66,23 @@ execute:
   - Facebook emotional contagion study (2014)
 - The Menlo report (2012): US DHS
 
-
 # Recasting the Belmont principles
 
+::: {.small}
 - Respect
   - Informed consent in digital services is very problematic
 - Beneficience
   - Minimizing the data that is collected
   - Indirect harms
 - Justice
+  - Identifiability
   - Representation
   - Algorithmic justice
+:::
 
 # Identifiability
+
+::: {.small}
 
 - Latanya Sweeney : ["Only You, Your Doctor, and Many Others May Know"](https://techscience.org/a/2015092903/)
 - Some data is deidentified on its own
@@ -87,18 +92,66 @@ execute:
   - Publicly available voter rolls
   - Newly released "anonymized" health records of state employees.
 
+:::
+
+# Identifiability
+
+Differential privacy
+
+- "Statistical databases"
+- Answer queries by adding noise to each entry
+- While maintaining statistical properties across entries
+
+
+# Identifiability
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {.small}
+- Clearview AI
+- Facial recognition at population scale
+:::
+
+:::
+
+::: {.column width="40%"}
+![](./images/hill.png)
+:::
+
+::::
+
+
+::: {.tiny}
+Hill, 2023
+
+:::
+
 
 # Algorithmic justice
 
+::: {.fragment}
+
 COMPAS algorithm for sentencing
 
-![](./images/propublica1.png)
+![](./images/propublica1.png){height=500}
+
+:::
 
 # Algorithmic justice
 
 COMPAS algorithm for sentencing
 
 ![](./images/propublica2.png)
+
+# Algorithmic bias
+
+![](./images/koenecke.jpeg)
+
+[Koenecke et al., 2020](https://www.pnas.org/doi/10.1073/pnas.1915768117)
+
+
 
 
 # "Weapons of Math Destruction"
