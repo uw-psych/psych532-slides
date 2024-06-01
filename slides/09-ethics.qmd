@@ -152,9 +152,6 @@ COMPAS algorithm for sentencing
 
 [Koenecke et al., 2020](https://www.pnas.org/doi/10.1073/pnas.1915768117)
 
-
-
-
 # "Weapons of Math Destruction"
 
 :::: {.columns}
@@ -188,6 +185,7 @@ O'Neil, 2016
 
 
 # Fairness Accountability and Transparency (FAccT)
+
 
 
 
